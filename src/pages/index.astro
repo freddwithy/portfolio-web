@@ -1,16 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+import SocialPill from '../components/SocialPill.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
-			<h1 class="font-bold text-5xl flex flex-row gap-x-4 pb-4">Hey, soy Fredd 
-				<div class="flex items-center justify-center"><Badge>Disponible para trabajar</Badge></div>
-			</h1>
-			<h2 class="text-xl opacity-80">Desarrollador junior sin experiencia, comencé mi carrera como programador hace un año, me entusiasma aprender.</h2>
-		</section>
+		<SectionContainer class="pt-44 pb-10">
+			<div class="flex gap-x-4 items-center mb-4">
+				<h1 class="font-bold text-5xl">Hey, soy Fredd</h1>
+				<Badge>Disponible para trabajar.</Badge>
+			</div>
+			<h2 class="text-xl opacity-80 mb-4"><span class="text-yellow-200">Desarrollador Web Frontend Junior</span> de Ciudad Del Este, Paraguay. Especializado en crear aplicaciones web que <span class="text-red-300">tu empresa necesita.</span></h2>
+			<nav class="gap-x-2 flex">
+				<SocialPill href="https://www.linkedin.com/in/freddy-sanabria-7544891b9/">
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://www.instagram.com/freddsana/">
+					Instagram
+				</SocialPill>
+				<SocialPill href="https://www.instagram.com/freddsana/">
+					TikTok
+				</SocialPill>
+				<SocialPill href="https://www.instagram.com/freddsana/">
+					GitHub
+				</SocialPill>
+				<SocialPill href="https://www.instagram.com/freddsana/">
+					freddyemanuelsanabrianalerio@gmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+		<SectionContainer>
+			<h2 class="text-xl font-semibold">Experiencia</h2>
+		</SectionContainer>
 	</main>
 </Layout>
  
