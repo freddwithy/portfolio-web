@@ -1,10 +1,6 @@
 ---
 const NAV_LINKS = [
     {
-        title: 'Inicio',
-        link: '#top'
-    },
-    {
         title: 'Experiencia',
         link: '#experience'
     },
@@ -13,7 +9,7 @@ const NAV_LINKS = [
         link: '#projects'
     },
     {
-        title: 'Acerca de mí',
+        title: 'Sobre mí',
         link: '#about'
     },
     {
@@ -24,9 +20,9 @@ const NAV_LINKS = [
 ---
 
 
-<header id="header-nav" class="flex justify-between items-center mx-auto my-4 p-2 fixed bg-transparent w-[1120px] rounded-full z-10 gap-x-4">
-    <img src="/avatar.webp" alt="avatar" class="size-10 rounded-full" id="avatar">
-    <nav class="flex gap-x-8 mx-3">
+<header id="header-nav" class="flex justify-center lg:justify-between items-center lg:mx-auto my-8 lg:my-4 p-2 fixed bg-transparent lg:w-[1120px] rounded-full z-10 lg:gap-x-4">
+    <img src="/avatar.webp" alt="avatar" class="size-10 rounded-full hidden lg:inline-block" id="avatar" >
+    <nav class="flex lg:gap-x-8 lgmx-3 gap-x-2">
         {
             NAV_LINKS.map((link) => (
                 <a href={link.link} class="hover:text-yellow-200 transition-colors ease-linear">{link.title}</a>
