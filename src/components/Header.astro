@@ -24,7 +24,7 @@ const NAV_LINKS = [
 
 <header id="header-nav" class="flex justify-center lg:justify-between items-center lg:mx-auto my-8 lg:my-4 p-2 fixed bg-slate-900/60 backdrop-blur-sm border border-white/20 lg:bg-transparent lg:w-[1120px] rounded-full z-10 lg:gap-x-4">
     <img src="/avatar.webp" alt="avatar" class="size-10 rounded-full hidden lg:inline-block" id="avatar" >
-    <nav class="flex lg:gap-x-8 lgmx-3 gap-x-2 mx-2">
+    <nav class="flex lg:gap-x-8 lgmx-3 gap-x-2 mx-2 items-center">
         {
             NAV_LINKS.map((link) => (
                 <a href={link.link} class="hover:text-yellow-200 dark:text-white transition-colors text-white lg:text-black ease-linear text-sm lg:text-base">{link.title}</a>
