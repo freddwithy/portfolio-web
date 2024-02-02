@@ -27,7 +27,7 @@ const NAV_LINKS = [
     <nav class="flex lg:gap-x-8 lgmx-3 gap-x-2 mx-2">
         {
             NAV_LINKS.map((link) => (
-                <a href={link.link} class="hover:text-yellow-200 dark:text-white transition-colors text-black ease-linear text-sm lg:text-base">{link.title}</a>
+                <a href={link.link} class="hover:text-yellow-200 dark:text-white transition-colors text-white lg:text-black ease-linear text-sm lg:text-base">{link.title}</a>
             ))
         }
         <ToggleButton client:only />
