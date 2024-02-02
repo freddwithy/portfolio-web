@@ -1,10 +1,36 @@
-<header class="flex justify-between items-center py-5 w-[1120px] mx-auto">
-    <img src="/avatar.webp" alt="" class="h-12 w-12 rounded-full">
-    <nav class="flex gap-x-10">
-        <a href="#top">Inicio</a>
-        <a href="#experience">Experiencia</a>
-        <a href="#projects">Proyectos</a>
-        <a href="#about">Acerca de mi</a>
-        <a href="#contact">Contacto</a>
+---
+const NAV_LINKS = [
+    {
+        title: 'Inicio',
+        link: '#top'
+    },
+    {
+        title: 'Experiencia',
+        link: '#experience'
+    },
+    {
+        title: 'Proyectos',
+        link: '#projects'
+    },
+    {
+        title: 'Acerca de mí',
+        link: '#about'
+    },
+    {
+        title: 'Contacto',
+        link: '#contact'
+    }
+]
+---
+
+
+<header id="header-nav" class="flex justify-between items-center mx-auto my-4 p-2 fixed bg-transparent w-[1120px] rounded-full z-10 gap-x-4">
+    <img src="/avatar.webp" alt="avatar" class="size-10 rounded-full" id="avatar">
+    <nav class="flex gap-x-8 mx-3">
+        {
+            NAV_LINKS.map((link) => (
+                <a href={link.link} class="hover:text-yellow-200 transition-colors ease-linear">{link.title}</a>
+            ))
+        }
     </nav>
 </header>
