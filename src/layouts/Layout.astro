@@ -45,16 +45,22 @@ const { title, desc } = Astro.props;
 	}
 
 	#header-nav {
-        animation: blur linear both 0.5s;
-        animation-timeline: scroll();
-        animation-range: 0 300px;
-      }
-	
-	  #avatar {
-		animation: avatar-blur linear both 0.5s;
-        animation-timeline: scroll();
-        animation-range: 0 300px;
-	  }
+        
+    }
+
+	@media (min-width: 740px) {
+		#header-nav {
+			animation: blur linear both 0.5s;
+			animation-timeline: scroll();
+			animation-range: 0 300px;
+		}
+	}
+
+		#avatar {
+			animation: avatar-blur linear both 0.5s;
+			animation-timeline: scroll();
+			animation-range: 0 300px;
+	  	}
 
 	  	@keyframes avatar-blur {
 			to {
@@ -63,7 +69,7 @@ const { title, desc } = Astro.props;
 			}
 		}
 
-        @keyframes blur {
+        @keyframes  blur {
           from {
             border: 0px;
           }
