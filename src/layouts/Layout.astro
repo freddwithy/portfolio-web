@@ -13,7 +13,7 @@ const { title, desc } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name={desc} content={title} />
@@ -23,7 +23,8 @@ const { title, desc } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] fixed"></div>
+		<div class="inset-0 -z-10 h-full w-full items-center px-5 py-24 bg-white dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] fixed top-0"></div>
+		<div class="dark:hidden fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div></div>
 		<Header />
 		<slot />
 		<Footer />
@@ -31,7 +32,7 @@ const { title, desc } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		color-scheme: dark;
+		color-scheme: light dark;
 	}
 	html {
 		font-family: 'Onest Variable', sans-serif;
@@ -48,9 +49,16 @@ const { title, desc } = Astro.props;
         
     }
 
-	@media (min-width: 740px) {
+	@media (min-width: 740px) and (prefers-color-scheme: dark){
 		#header-nav {
 			animation: blur linear both 0.5s;
+			animation-timeline: scroll();
+			animation-range: 0 300px;
+		}
+	}
+	@media (min-width: 740px) and (prefers-color-scheme: light) {
+		#header-nav {
+			animation: blur-light linear both 0.5s;
 			animation-timeline: scroll();
 			animation-range: 0 300px;
 		}
@@ -90,6 +98,32 @@ const { title, desc } = Astro.props;
             align-items: center;
 			justify-content: center;
             background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 9999px;
+			width: 590px;
+          }
+        }
+
+		@keyframes  blur-light {
+          from {
+            border: 0px;
+          }
+          to {
+            box-shadow:
+              0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+              0px 0px 0 1px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border-width: 1px;
+            border-color: rgba(255, 255, 255, 0.226);
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+			justify-content: center;
+            background-color: rgba(91, 9, 197, 0.3);
             border-radius: 9999px;
 			width: 590px;
           }
