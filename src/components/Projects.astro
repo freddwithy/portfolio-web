@@ -1,0 +1,61 @@
+---
+import AstroIcon from "../icons/AstroIcon.astro"
+import Tailwind from "../icons/Tailwind.astro"
+import Tags from "./Tags.astro"
+
+const TOOL_TAGS = {
+    TAILWIND: {
+        name: "Tailwind CSS",
+		icon:  Tailwind,
+        class: "bg-blue-600 text-white"
+    },
+	ASTRO: {
+		name:  "Astro JS",
+		icon:   AstroIcon,
+        class: "bg-black text-white"
+	}
+}
+
+const PROJECTS = [
+    {
+        name: "ElectroFrio - 2024",
+        desc: "Construí una landing page para una importante empresa de climatización de    la región en donde vivo, encargandome del diseño UI, UX, el responsive, el SEO y    de más.",
+        img: "/projects/electrofrio.webp",
+        alt: "electrofrio",
+        tags: [TOOL_TAGS.ASTRO, TOOL_TAGS.TAILWIND],
+    },
+    {
+        name: "ElectroFrio - 2024",
+        desc: "Construí una landing page para una importante empresa de climatización de    la región en donde vivo, encargandome del diseño UI, UX, el responsive, el SEO y    de más.",
+        img: "/projects/electrofrio.webp",
+        alt: "electrofrio",
+        tags: [TOOL_TAGS.ASTRO, TOOL_TAGS.TAILWIND],
+    }
+]
+---
+{
+    PROJECTS.map(({ name, desc, img, alt, tags }) => (
+        <article class="flex items-center gap-x-8 mb-16  ">
+            <div class='flex-2 h-64 w-full max-w-96 overflow-hidden rounded-xl border border-slate-800 p-[1px] backdrop-blur-3xl'>
+                <span class='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]' />
+                <div class='inline-flex h-full w-full rounded-xl bg-slate-950 backdrop-blur-3xl overflow-hidden'>
+                    <img src={img} alt={alt} class="object-cover w-full hover:scale-105 transition-transform ease-in-out duration-500" />
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-y-2">
+                <h3 class="font-semibold dark:text-yellow-300 text-2xl">{name}</h3>
+                <div class="flex items-center gap-x-2">
+                    {
+                        tags.map((tag) => (
+                            <Tags class={`${tag.class}`}>
+                                <tag.icon class="size-4"/>
+                                {tag.name}
+                            </Tags>
+                        ))
+                    }
+                </div>
+                <p class="text-sm dark:text-gray-200 text-pretty">{desc}</p>
+            </div>
+        </article>
+    ))
+}

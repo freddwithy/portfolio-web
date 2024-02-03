@@ -6,7 +6,8 @@ import SocialPill from '../components/SocialPill.astro';
 import BriefcaseIcon from '../icons/BriefcaseIcon.astro';
 import Experience from '../components/Experience.astro';
 import CodeIcon from '../icons/CodeIcon.astro';
-import BetterTitle from '../components/BetterTitle.astro';
+import Card from '../components/Projects.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout title="Fredd Dev - Desarrollador Web y Diseñador Gráfico" desc='Creando aplicaciones web únicas y diseños impactantes para tu marca.'>
@@ -43,12 +44,12 @@ import BetterTitle from '../components/BetterTitle.astro';
 			</h2>
 			<Experience />
 		</SectionContainer>
-		<SectionContainer>
+		<SectionContainer class="flex flex-col" id="projects">
 			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
 				<CodeIcon class="size-8"/>
 				Proyectos
 			</h2>
-			<Experience />
+			<Projects />
 		</SectionContainer>
 	</main>
 </Layout>
