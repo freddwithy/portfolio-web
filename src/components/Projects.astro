@@ -1,6 +1,10 @@
 ---
 import AstroIcon from "../icons/AstroIcon.astro"
+import NextJsIcon from "../icons/NextJsIcon.astro"
 import Tailwind from "../icons/Tailwind.astro"
+import MySQL from '../icons/MySQL.astro'
+import ShadCN from '../icons/ShadCN.astro'
+import PlanetScale from '../icons/PlanetScale.astro'
 import Tags from "./Tags.astro"
 
 const TOOL_TAGS = {
@@ -13,28 +17,50 @@ const TOOL_TAGS = {
 		name:  "Astro JS",
 		icon:   AstroIcon,
         class: "bg-black text-white"
-	}
+	},
+    NEXTJS: {
+		name:  "Next JS",
+		icon:   NextJsIcon,
+        class: "bg-black text-white"
+	},
+    MYSQL: {
+		name:  "MySQL",
+		icon:   MySQL,
+        class: "bg-white text-black"
+	},
+    SHADCN: {
+		name:  "Shad CN",
+		icon:   ShadCN,
+        class: "bg-[#09090B] text-white"
+	},
+    PLANETSCALE: {
+		name:  "Planet Scale",
+		icon:   PlanetScale,
+        class: "bg-[#111111] text-white"
+	},
 }
 
 const PROJECTS = [
     {
         name: "ElectroFrio - 2024",
-        desc: "Construí una landing page para una importante empresa de climatización de    la región en donde vivo, encargandome del diseño UI, UX, el responsive, el SEO y    de más.",
+        desc: "Una landing page para una importante empresa de climatización de    la región en donde vivo, encargandome del diseño UI, UX, el responsive, el SEO y    de más.",
         img: "/projects/electrofrio.webp",
         alt: "electrofrio",
         tags: [TOOL_TAGS.ASTRO, TOOL_TAGS.TAILWIND],
+        link: "https://electrofrio-demo.netlify.app/"
     },
     {
-        name: "ElectroFrio - 2024",
-        desc: "Construí una landing page para una importante empresa de climatización de    la región en donde vivo, encargandome del diseño UI, UX, el responsive, el SEO y    de más.",
-        img: "/projects/electrofrio.webp",
-        alt: "electrofrio",
-        tags: [TOOL_TAGS.ASTRO, TOOL_TAGS.TAILWIND],
+        name: "Flesh CMS - 2024",
+        desc: "Un CMS dashboard para controlar productos, categorias, detalles y otros aspectos de un E-Commerce, desarrollado para iStore.",
+        img: "/projects/fleshcms.webp",
+        alt: "fleshcms",
+        tags: [TOOL_TAGS.NEXTJS, TOOL_TAGS.TAILWIND, TOOL_TAGS.MYSQL, TOOL_TAGS.PLANETSCALE, TOOL_TAGS.SHADCN],
+        link: "https://istore-ecommerce-dashboard.vercel.app"
     }
 ]
 ---
 {
-    PROJECTS.map(({ name, desc, img, alt, tags }) => (
+    PROJECTS.map(({ name, desc, img, alt, tags, link }) => (
         <article class="flex flex-col lg:flex-row items-center gap-y-6 lg:gap-x-8 mb-16">
             <div class='flex-2 relative h-64 w-full max-w-96 overflow-hidden rounded-xl border border-slate-800 p-[1px] backdrop-blur-3xl'>
                 <span class='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]' />
@@ -44,7 +70,7 @@ const PROJECTS = [
             </div>
             <div class="flex-1 flex flex-col gap-y-2">
                 <h3 class="font-semibold dark:text-yellow-300 text-2xl">{name}</h3>
-                <div class="flex items-center gap-x-2">
+                <div class="flex items-center gap-2 flex-wrap">
                     {
                         tags.map((tag) => (
                             <Tags class={`${tag.class}`}>
@@ -55,6 +81,9 @@ const PROJECTS = [
                     }
                 </div>
                 <p class="text-sm dark:text-gray-200 text-pretty">{desc}</p>
+                <a class='inline-flex h-12 mt-2 bg-violet-800 dark:animate-background-shine items-center justify-center rounded-full border border-gray-200 dark:border-white/30 dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 md:px-6 font-medium text-white dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 w-32 md:w-56 hover:scale-105 transition-all ease-in-out' href={link} target="_blank">
+                    Ver proyecto
+                </a>
             </div>
         </article>
     ))
