@@ -7,6 +7,8 @@ import BriefcaseIcon from '../icons/BriefcaseIcon.astro';
 import Experience from '../components/Experience.astro';
 import CodeIcon from '../icons/CodeIcon.astro';
 import Projects from '../components/Projects.astro';
+import DesignGallery from '../components/DesignGallery.astro';
+import Brush from '../icons/Brush.astro';
 ---
 
 <Layout title="Fredd Dev - Desarrollador Web y Diseñador Gráfico" desc='Creando aplicaciones web únicas y diseños impactantes para tu marca.'>
@@ -25,13 +27,13 @@ import Projects from '../components/Projects.astro';
 				<SocialPill href="https://www.instagram.com/freddsana/">
 					Instagram
 				</SocialPill>
-				<SocialPill href="https://www.instagram.com/freddsana/">
+				<SocialPill href="https://www.tiktok.com/@freddsana/">
 					TikTok
 				</SocialPill>
-				<SocialPill href="https://www.instagram.com/freddsana/">
+				<SocialPill href="https://github.com/freddwithy/">
 					GitHub
 				</SocialPill>
-				<SocialPill href="https://www.instagram.com/freddsana/">
+				<SocialPill href="mailto:freddyemanuelsanabrianalerio@gmail.com" >
 					freddyemanuelsanabrianalerio@gmail.com
 				</SocialPill>
 			</nav>
@@ -49,6 +51,13 @@ import Projects from '../components/Projects.astro';
 				Proyectos
 			</h2>
 			<Projects />
+		</SectionContainer>
+		<SectionContainer class="flex flex-col" id="projects">
+			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
+				<Brush class="size-8"/>
+				Diseños
+			</h2>
+			<DesignGallery />
 		</SectionContainer>
 	</main>
 </Layout>
