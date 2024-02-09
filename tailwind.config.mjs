@@ -5,7 +5,8 @@ export default {
 	theme: {
 		extend: {
 				"animation": {
-				  "background-shine": "background-shine 2s linear infinite"
+				  "background-shine": "background-shine 2s linear infinite",
+				  "animation-circle-infinite": "spin 2s linear infinite"
 				},
 				"keyframes": {
 				  "background-shine": {
@@ -16,7 +17,7 @@ export default {
 					  "backgroundPosition": "-200% 0"
 					}
 				  }
-				}			  
+				}		  
 		},
 	},
 	plugins: [],
