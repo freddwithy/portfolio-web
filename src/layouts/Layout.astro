@@ -6,17 +6,17 @@ import '@fontsource-variable/onest';
 
 interface Props {
 	title: string;
-	desc: string
+	description: string
 }
 
-const { title, desc } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name={desc} content={title} />
+		<meta name={description} content={title} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
