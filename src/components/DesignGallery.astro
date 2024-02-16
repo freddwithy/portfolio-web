@@ -1,3 +1,109 @@
-<h3>
-    Aqui va la galeria
-</h3>
+---
+import 'photoswipe/style.css';
+
+const GALLERY_V = [
+    {
+        name: "cat",
+        thumb: "/designs/thumbs/cat.webp",
+        img: "/designs/cat.png",
+        width: "3000",
+        height: "4000"
+    },
+    {
+        name: "spinetta",
+        thumb: "/designs/thumbs/spinetta.webp",
+        img: "/designs/spinetta.png",
+        width: "1200",
+        height: "1200"
+    },
+    {
+        name: "revtek",
+        thumb: "/designs/thumbs/revtek.webp",
+        img: "/designs/revtek.png",
+        width: "808",
+        height: "632"
+    }
+]
+
+const GALLERY_H = [
+    {
+        name: "china",
+        thumb: "/designs/thumbs/china.webp",
+        img: "/designs/china.png",
+        width: "1920",
+        height: "1080"
+    },
+    {
+        name: "crime",
+        thumb: "/designs/thumbs/crime.webp",
+        img: "/designs/crime.png",
+        width: "1920",
+        height: "1080"
+    },
+    {
+        name: "dillom",
+        thumb: "/designs/thumbs/dillom.webp",
+        img: "/designs/dillom.png",
+        width: "3000",
+        height: "2000"
+    },
+    {
+        name: "duosantti",
+        thumb: "/designs/thumbs/duosantti.webp",
+        img: "/designs/duosantti.png",
+        width: "1920",
+        height: "1080"
+    },
+    {
+        name: "yellow",
+        thumb: "/designs/thumbs/yellow.webp",
+        img: "/designs/yellow.png",
+        width: "1920",
+        height: "1080"
+    }
+]
+---
+<article class="lg:flex grid grid-cols-1 max-w-[300px] lg:max-w-full" id="gallery">
+    <div class="grid self-start">
+        {
+            GALLERY_H.map((project) => (
+                    <a  class="shadow-lg shadow-black/25 overflow-hidden hover:scale-105 transition-transform ease-linear w-full"
+                        href={project.img}
+                        target="_blank"
+                        data-pswp-width={project.width}
+                        data-pswp-height={project.height}
+                    >
+                        <img 
+                            src={project.thumb} 
+                            alt={project.name}>
+                    </a>
+            ))
+        }
+    </div>
+    <div class="grid self-start">
+        {
+            GALLERY_V.map((project) => (
+                    <a  class="shadow-lg shadow-black/25 overflow-hidden hover:scale-105 transition-transform ease-linear w-[300px] md:w-full"
+                        href={project.img}
+                        target="_blank"
+                        data-pswp-width={project.width}
+                        data-pswp-height={project.height}
+                    >
+                        <img 
+                            src={project.thumb} 
+                            alt={project.name}>
+                    </a>
+            ))
+        }
+    </div>
+</article>
+
+<script>
+    import PhotoSwipeLightbox from 'photoswipe/lightbox';
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: '#gallery',
+        children: 'a',
+        pswpModule: () => import('photoswipe')
+    });
+    lightbox.init();
+</script>
