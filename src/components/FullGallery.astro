@@ -3,8 +3,16 @@ import 'photoswipe/style.css';
 
 const { galeria } = Astro.props as Props
 
+interface Images {
+    name: string;
+    thumb: string;
+    img: string;
+    width: string;
+    height: string;
+}
+
 interface Props {
-    galeria: []
+    galeria: Images[]
 }
     
 ---
