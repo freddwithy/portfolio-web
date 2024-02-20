@@ -1,5 +1,6 @@
 ---
 import 'photoswipe/style.css';
+import ArrowForward from '../icons/ArrowForward.astro';
 
 const GALLERY_V = [
     {
@@ -63,11 +64,11 @@ const GALLERY_H = [
     }
 ]
 ---
-<article class="lg:flex grid grid-cols-1 max-w-[300px] lg:max-w-full" id="gallery">
-    <div class="grid self-start">
+<article class="lg:flex grid grid-cols-1 max-w-[300px] lg:max-w-full gap-2" id="gallery">
+    <div class="grid self-start gap-2">
         {
             GALLERY_H.map((project) => (
-                    <a  class="shadow-lg shadow-black/25 overflow-hidden hover:scale-105 transition-transform ease-linear w-full"
+                    <a  class="shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-md border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60"
                         href={project.img}
                         target="_blank"
                         data-pswp-width={project.width}
@@ -80,10 +81,10 @@ const GALLERY_H = [
             ))
         }
     </div>
-    <div class="grid self-start">
+    <div class="grid self-start gap-2">
         {
             GALLERY_V.map((project) => (
-                    <a  class="shadow-lg shadow-black/25 overflow-hidden hover:scale-105 transition-transform ease-linear w-[300px] md:w-full"
+                    <a  class="shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-md border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60"
                         href={project.img}
                         target="_blank"
                         data-pswp-width={project.width}
@@ -97,6 +98,12 @@ const GALLERY_H = [
         }
     </div>
 </article>
+<div class="mt-4 flex justify-center">
+    <a class='inline-flex h-12 mt-2 bg-violet-800 dark:animate-background-shine items-center justify-center rounded-full border border-gray-200 dark:border-white/30 dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 md:px-6 font-medium text-white dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 w-32 md:w-56 hover:scale-105 transition-all ease-in-out gap-2' href="/gallery" target="_blank">
+        Ver todo
+        <ArrowForward />
+    </a>
+</div>
 
 <script>
     import PhotoSwipeLightbox from 'photoswipe/lightbox';
