@@ -6,7 +6,8 @@ export default {
 		extend: {
 				"animation": {
 				  "background-shine": "background-shine 2s linear infinite",
-				  "animation-circle-infinite": "spin 2s linear infinite"
+				  "animation-circle-infinite": "spin 2s linear infinite",
+				  "text-gradient": "text-gradient 1.5s linear infinite"
 				},
 				"keyframes": {
 				  "background-shine": {
@@ -15,6 +16,11 @@ export default {
 					},
 					"to": {
 					  "backgroundPosition": "-200% 0"
+					}
+				  },
+				  "text-gradient": {
+					"to": {
+					  "backgroundPosition": "200% center"
 					}
 				  }
 				}		  
