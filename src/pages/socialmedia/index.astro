@@ -1,0 +1,58 @@
+---
+import SectionContainer from "../../components/SectionContainer.astro";
+import 'photoswipe/style.css';
+import Brush from "../../icons/Brush.astro";
+import Layout from "../../layouts/Layout.astro";
+import FullGallery from "../../components/FullGallery.astro";
+
+const GALLERY = [
+    {
+        name: "china",
+        thumb: "/designs/thumbs/china.webp",
+        img: "/designs/china.png",
+        width: "1920",
+        height: "1080"
+    },
+    {
+        name: "crime",
+        thumb: "/designs/thumbs/crime.webp",
+        img: "/designs/crime.png",
+        width: "1920",
+        height: "1080"
+    },
+    {
+        name: "dillom",
+        thumb: "/designs/thumbs/dillom.webp",
+        img: "/designs/dillom.png",
+        width: "3000",
+        height: "2000"
+    },
+]
+
+interface Props {
+    name: string;
+    thumb: string;
+    img: string;
+    width: string;
+    height: string
+}
+
+type GALLERY = Props[];
+---
+
+<Layout title="Freddy Sanabria - Galería de Diseños y Montajes" description="Conoce todos algunos de mis diseños más destacables">
+    <SectionContainer class="mt-36 lg:max-w-[1120px] flex flex-col items-center gap-4">
+        <div class="max-w-[740px] mx-auto text-center flex flex-col items-center gap-4">
+            <h1 class='flex gap-4 text-3xl lg:text-4xl dark:text-white font-bold'> 
+                <Brush class="size-8 lg:size-10"/>
+                Social Media Design
+            </h1>
+            <h2 class="dark:text-white/70 text-pretty text-lg">
+                En esta sección podrás ver mis <span class="dark:text-yellow-200">mejores diseños</span>  hechos con <span class="dark:text-red-300">Photoshop, Illustrator y otros.</span> Todo esto fue 100% diseñado por mí.
+            </h2>
+        </div>
+        <FullGallery 
+            galeria={GALLERY}
+        />
+    </SectionContainer>
+</Layout>
