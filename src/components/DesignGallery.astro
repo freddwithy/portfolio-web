@@ -1,45 +1,27 @@
 ---
-import 'photoswipe/style.css';
 import ArrowForward from '../icons/ArrowForward.astro';
-
-const GALLERY_V = [
-    {
-        name: "cat",
-        thumb: "/designs/thumbs/cat.webp",
-        img: "/designs/cat.png",
-        width: "3000",
-        height: "4000"
-    },
-    {
-        name: "spinetta",
-        thumb: "/designs/thumbs/spinetta.webp",
-        img: "/designs/spinetta.png",
-        width: "1200",
-        height: "1200"
-    }
-]
+import Projects from './Projects.astro';
 
 const GALLERY_H = [
-    {
-        name: "china",
-        thumb: "/designs/thumbs/china.webp",
-        img: "/designs/china.png",
-        width: "1920",
-        height: "1080"
-    },
     {
         name: "crime",
         thumb: "/designs/thumbs/crime.webp",
         img: "/designs/crime.png",
         width: "1920",
-        height: "1080"
+        height: "1080",
+        tipoDesign: "Fotomontajes",
+        desc: "Fotomontajes hechos en Photoshop en donde se trata de comunicar una historia a través de manipulaciones de imágenes.",
+        linkTo: "/gallery"
     },
     {
-        name: "dillom",
-        thumb: "/designs/thumbs/dillom.webp",
-        img: "/designs/dillom.png",
-        width: "3000",
-        height: "2000"
+        name: "duosantti",
+        thumb: "/designs/thumbs/duosantti.webp",
+        img: "/designs/duosantti.png",
+        width: "1920",
+        height: "1080",
+        tipoDesign: "Social Media",
+        desc: "Diseños para redes sociales en general, hechos para llamar la atención de los clientes y marcar presencia.",
+        linkTo: "/gallery/socialmedia"
     }
 ]
 ---
@@ -47,31 +29,24 @@ const GALLERY_H = [
     <div class="grid self-start gap-2">
         {
             GALLERY_H.map((project) => (
-                    <a  class="shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-md border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60"
-                        href={project.img}
+                    <a  class="shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-lg border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60 relative group"
+                        href={project.linkTo}
                         target="_blank"
-                        data-pswp-width={project.width}
-                        data-pswp-height={project.height}
                     >
                         <img 
                             src={project.thumb} 
-                            alt={project.name}>
-                    </a>
-            ))
-        }
-    </div>
-    <div class="grid self-start gap-2">
-        {
-            GALLERY_V.map((project) => (
-                    <a  class="shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-md border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60"
-                        href={project.img}
-                        target="_blank"
-                        data-pswp-width={project.width}
-                        data-pswp-height={project.height}
-                    >
-                        <img 
-                            src={project.thumb} 
-                            alt={project.name}>
+                            alt={project.name}
+                        />
+                        <span class="absolute top-8 left-6 text-4xl font-semibold z-10 translate-y-6 group-hover:translate-y-0 text-transparent group-hover:text-white transition-all flex flex-col max-w-[300px] gap-2">
+                            {project.tipoDesign}
+                            <small class="text-sm group-hover:text-white/70">
+                                {project.desc}
+                            </small>
+                            <small class="text-sm group-hover:text-blue-300/70">
+                                Click para hechar un vistazo...
+                            </small>
+                        </span>
+                        <div class="size-full group-hover:bg-gradient-to-br group-hover:from-black group-hover:to-transparent transition-all absolute top-0 left-0"/>
                     </a>
             ))
         }
@@ -83,13 +58,3 @@ const GALLERY_H = [
         <ArrowForward />
     </a>
 </div>
-
-<script>
-    import PhotoSwipeLightbox from 'photoswipe/lightbox';
-    const lightbox = new PhotoSwipeLightbox({
-        gallery: '#gallery',
-        children: 'a',
-        pswpModule: () => import('photoswipe')
-    });
-    lightbox.init();
-</script>
