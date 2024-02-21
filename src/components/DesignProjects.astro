@@ -1,6 +1,16 @@
 ---
 const GALLERY_H = [
     {
+        name: "duosantti",
+        thumb: "/designs/thumbs/duosantti.webp",
+        img: "/designs/duosantti.png",
+        width: "1920",
+        height: "1080",
+        tipoDesign: "Social Media",
+        desc: "Diseños para redes sociales en general, hechos para llamar la atención de los clientes y marcar presencia.",
+        linkTo: "/socialmedia"
+    },
+    {
         name: "crime",
         thumb: "/designs/thumbs/crime.webp",
         img: "/designs/crime.png",
@@ -10,42 +20,46 @@ const GALLERY_H = [
         desc: "Fotomontajes hechos en Photoshop en donde se trata de comunicar una historia a través de manipulaciones de imágenes.",
         linkTo: "/manipulation"
     },
-    {
-        name: "duosantti",
-        thumb: "/designs/thumbs/duosantti.webp",
-        img: "/designs/duosantti.png",
-        width: "1920",
-        height: "1080",
-        tipoDesign: "Social Media",
-        desc: "Diseños para redes sociales en general, hechos para llamar la atención de los clientes y marcar presencia.",
-        linkTo: "/socialmedia"
-    }
 ]
 ---
 <article class="lg:flex grid grid-cols-1 max-w-[300px] lg:max-w-full gap-2" id="gallery">
-    <div class="flex flex-col gap-2">
+    <div class="flex gap-6 md:gap-2 flex-col">
         {
             GALLERY_H.map((project) => (
-                    <a  class="shadow-lg shadow-black/25 overflow-hidden transition-all ease-out duration-300 w-full rounded-lg border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60 relative group"
+                    <a  class="relative w-full overflow-hidden rounded-xl border border-slate-800 p-[1px] backdrop-blur-3xl group"
                         href={project.linkTo}
                         target=""
                     >
+                    <span class='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]' />
+                    <div class='inline-flex h-full w-full rounded-xl bg-slate-950 backdrop-blur-3xl overflow-hidden'>
                         <img 
                             src={project.thumb} 
                             alt={project.name}
-                            class="group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            class="object-cover w-full group-hover:scale-105 transition-transform ease-in-out duration-500"
                         />
-                        <span class="absolute top-8 left-6 text-4xl font-semibold z-10 translate-y-6 group-hover:translate-y-0 text-transparent group-hover:text-white ease-in-out duration-300 transition-all flex flex-col max-w-[300px] gap-2">
+                        <div class="absolute size-full group-hover:bg-gradient-to-br from-black via-black/80 to-transparent top-0 left-0 ease-in-out duration-300"/>
+                    </div>
+                        <span class="absolute top-8 left-6 text-4xl font-semibold z-10 translate-y-6 group-hover:translate-y-0 text-transparent group-hover:text-yellow-300 ease-in-out duration-300 transition-all flex-col max-w-[300px] gap-2 hidden md:flex">
                             {project.tipoDesign}
                             <small class="text-sm text-transparent duration-300 ease-in-out group-hover:text-white/70">
                                 {project.desc}
                             </small>
-                            <small class="text-sm duration-300 ease-in-out text-transparent group-hover:text-blue-300/70">
+                            <small class="text-sm duration-300 ease-in-out text-transparent group-hover:text-blue-300">
                                 Click para hechar un vistazo...
                             </small>
                         </span>
-                        <div class="absolute size-full group-hover:bg-gradient-to-br from-black via-black/80 to-transparent top-0 left-0 ease-in-out duration-300"/>
                     </a>
+                    <div>
+                        <h3 class="md:hidden text-3xl font-bold text-yellow-300">
+                            {project.tipoDesign}
+                        </h3>
+                        <p class="md:hidden text-white/60">
+                            {project.desc}
+                        </p>
+                        <small class="text-xs md:hidden text-blue-300">
+                            Click en la imagen para ver más
+                        </small>
+                    </div>
             ))
         }
     </div>

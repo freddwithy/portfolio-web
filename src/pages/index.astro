@@ -9,7 +9,8 @@ import CodeIcon from '../icons/CodeIcon.astro';
 import Projects from '../components/Projects.astro';
 import Brush from '../icons/Brush.astro';
 import DesignProjects from '../components/DesignProjects.astro';
-import ViewTransitions from 'astro/components/ViewTransitions.astro';
+import AddressBook from '../icons/AddressBook.astro';
+import UserCircle from '../icons/UserCircle.astro';
 ---
 
 <Layout title="Freddy Sanabria - Desarrollador Web y Diseñador Gráfico de Paraguay" description="Creando aplicaciones web únicas y diseños impactantes para tu marca. Me encargo de crear la página web y diseño que necesites.">
@@ -59,6 +60,18 @@ import ViewTransitions from 'astro/components/ViewTransitions.astro';
 				Diseños
 			</h2>
 			<DesignProjects />
+		</SectionContainer>
+		<SectionContainer class="justify-center my-20 items-center lg:max-w-[740px] hidden" id="contact">
+			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
+				<UserCircle  class="size-8"/>
+				Sobre mí
+			</h2>
+		</SectionContainer>
+		<SectionContainer class="justify-center my-20 items-center lg:max-w-[740px] hidden" id="contact">
+			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
+				<AddressBook  class="size-8"/>
+				Contacto
+			</h2>
 		</SectionContainer>
 		<SectionContainer class="justify-center my-20 items-center lg:max-w-[740px]">
 			<div class="flex flex-col lg:flex-row items-center gap-4">
