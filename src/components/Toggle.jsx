@@ -5,23 +5,15 @@ export const ToggleButton = () => {
     const [theme, setTheme] = useState(null)
 
     useEffect(() => {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches){
-            setTheme('dark')
-        } else {
-            setTheme('light')
-        }
-    }, [])
-
-    useEffect(() => {
         if (theme === "dark") {
-            document.querySelector('html').classList.add('dark')
+            document.querySelector('html').classList.add("dark")
         } else {
-            document.querySelector('html').classList.remove('dark')
+            document.querySelector('html').classList.remove("dark")
         }
     }, [theme])
 
     const handleChangeTheme = () => {
-        setTheme(prevTheme => prevTheme === "light" ? "dark" : "light")
+        setTheme(prevTheme => prevTheme === "dark" ? "light" : "dark")
     }
 
     return (
