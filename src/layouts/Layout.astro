@@ -23,8 +23,8 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="dark:text-white text-black">
-		<div class="dark:flex fixed inset-0 hidden z-[-2] h-screen w-screen bg-slate-950  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-		<div class="dark:hidden fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div></div>
+		<div class="dark:lg:flex fixed inset-0 hidden z-[-2] h-screen w-screen bg-slate-950  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		<div class="dark:hidden hidden lg:flex fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div></div>
 		<Header />
 		<slot />
 		<Footer />
@@ -43,6 +43,7 @@ const { title, description } = Astro.props;
 		flex-direction: column;
 		align-items: center;
 		min-height: 100vh;
+		background-color: rgb(2 6 23);
 	}
 
 	@media (min-width: 740px) {
