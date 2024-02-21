@@ -7,37 +7,30 @@ import FullGallery from "../../components/FullGallery.astro";
 
 const GALLERY = [
     {
-        name: "china",
-        thumb: "/designs/thumbs/china.webp",
-        img: "/designs/china.png",
+        name: "duosantti",
+        thumb: "/designs/thumbs/duosantti.webp",
+        img: "/designs/duosantti.png",
         width: "1920",
-        height: "1080"
+        height: "1080",
+        aspect: "horizontal"
     },
     {
-        name: "crime",
-        thumb: "/designs/thumbs/crime.webp",
-        img: "/designs/crime.png",
-        width: "1920",
-        height: "1080"
+        name: "revtek",
+        thumb: "/designs/thumbs/revtek.webp",
+        img: "/designs/revtek.png",
+        width: "808",
+        height: "632",
+        aspect: "vertical"
     },
     {
-        name: "dillom",
-        thumb: "/designs/thumbs/dillom.webp",
-        img: "/designs/dillom.png",
-        width: "3000",
-        height: "2000"
-    },
+        name: "yellow",
+        thumb: "/designs/thumbs/yellow.webp",
+        img: "/designs/yellow.png",
+        width: "1920",
+        height: "1080",
+        aspect: "horizontal"
+    }
 ]
-
-interface Props {
-    name: string;
-    thumb: string;
-    img: string;
-    width: string;
-    height: string
-}
-
-type GALLERY = Props[];
 ---
 
 <Layout title="Freddy Sanabria - Galería de Diseños y Montajes" description="Conoce todos algunos de mis diseños más destacables">

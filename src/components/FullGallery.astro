@@ -9,6 +9,7 @@ interface Images {
     img: string;
     width: string;
     height: string;
+    aspect: string
 }
 
 interface Props {
@@ -17,10 +18,10 @@ interface Props {
     
 ---
 <article class="lg:flex grid grid-cols-1 max-w-[300px] lg:max-w-full gap-2" id="gallery">
-    <div class="grid self-start gap-2">
+    <div class="grid grid-cols-10 auto-rows-[200px]  gap-2 self-start justify-items-start">
         {
-            galeria.map(({ name, width, thumb, height, img }) => (
-                    <a  class="shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-md border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60"
+            galeria.map(({ name, width, thumb, height, img, aspect }) => (
+                    <a  class={`shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-md border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60 ${ aspect === "vertical" && height > "1200" ? "row-span-2 col-span-3" : "" || aspect === "horizontal" && width >= "1920" ? "row-span-1 col-span-7" : "" || aspect === "vertical" && height <= "1200" ? "row-span-1 col-span-3" : "" || aspect === "horizontal" && width < "1920" ? "col-span-3" : ""}`}
                         href={img}
                         target="_blank"
                         data-pswp-width={width}
@@ -28,23 +29,9 @@ interface Props {
                     >
                         <img 
                             src={thumb} 
-                            alt={name}>
-                    </a>
-            ))
-        }
-    </div>
-    <div class="grid self-start gap-2">
-        {
-            galeria.map(({ name, width, thumb, height, img }) => (
-                    <a  class="shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-md border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60"
-                        href={img}
-                        target="_blank"
-                        data-pswp-width={width}
-                        data-pswp-height={height}
-                    >
-                        <img 
-                            src={thumb} 
-                            alt={name}>
+                            alt={name}
+                            class=""
+                        />
                     </a>
             ))
         }
