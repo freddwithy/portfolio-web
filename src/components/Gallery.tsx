@@ -39,11 +39,26 @@ export const Gallery = ({ galeria }: Props) => {
             children: 'a',
             pswpModule: () => import('photoswipe')
         });
-        lightbox.init();
-
+        lightbox.init()
+        
         return 
     }, [])
-    
+
+    window.addEventListener('scroll', () => {
+        const loadButton = document.getElementById('loadButton');
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollPosition / (documentHeight - windowHeight)) * 100;
+
+        if (loadButton && scrollPercentage >= 80) {
+            loadButton.classList.add('show');
+            loadButton.classList.remove('hide');
+        } else {
+            loadButton?.classList.add('hide');
+            loadButton?.classList.remove('show');
+        }
+    });
 
     return (
         <>
@@ -87,7 +102,7 @@ export const Gallery = ({ galeria }: Props) => {
             </article>
             {currentImagesCount < galeria.length &&
                 <button 
-                    class='py-2 px-4 bg-black/20  border rounded-3xl text-white border-white/20 my-8 backdrop-blur-sm fixed md:bottom-12 bottom-20 translate-y-64 z-10 hover:text-yellow-200 hover:scale-105 transition-all'  
+                    class='py-2 px-4 bg-black/20  border rounded-3xl text-white border-white/20 my-8 backdrop-blur-sm fixed md:bottom-12 bottom-20 z-10 hover:text-yellow-200 hover:scale-105 transition-all'  
                     onClick={handleLoadMore}
                     id="loadButton"
                     >
