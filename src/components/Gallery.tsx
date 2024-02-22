@@ -86,7 +86,13 @@ export const Gallery = ({ galeria }: Props) => {
                 </div>
             </article>
             {currentImagesCount < galeria.length &&
-                <button class='py-2 px-4 bg-black border rounded-xl text-blue-200 font-bold border-white-200/30' onClick={handleLoadMore}>Cargar mas...</button>
+                <button 
+                    class='py-2 px-4 bg-black/20  border rounded-3xl text-white font-semibold border-white-200/30 my-8 backdrop-blur-sm fixed bottom-12 translate-y-64 opacity-0 hover:scale-105 transition-all'  
+                    onClick={handleLoadMore}
+                    id="loadButton"
+                    >
+                        Cargar mas...
+                </button>
             }
         </>
     )

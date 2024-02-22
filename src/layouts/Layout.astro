@@ -60,6 +60,19 @@ const { title, description } = Astro.props;
 			animation-range: 0 300px;
 	  	}
 
+		#loadButton {
+			animation: buttonShow ease-in-out both;
+			animation-timeline: scroll();
+			animation-range: 50%;
+		}
+
+		@keyframes buttonShow {
+			to {
+				transform: translateY(0px);
+				opacity: 100%;
+			}
+		}
+
 	  	@keyframes avatar-blur {
 			to {
 				width: 25px;

@@ -16,7 +16,7 @@ const generateIncrementalName = (baseName: string, index: number): string => {
 for (let i = 0; i <= totalDeImagenes; i++) {
     const baseName = "img";  // Puedes cambiar esto a otros nombres según tus necesidades
     const imageName = generateIncrementalName(baseName, i);
-    const imagePath = `src/assets/designs/socialmedia/${imageName}.webp`;
+    const imagePath = `public/designs/socialmedia/${imageName}.webp`;
     
     const imageMeta = await sharp(imagePath).metadata()
     const height = imageMeta.height as number
@@ -26,8 +26,8 @@ for (let i = 0; i <= totalDeImagenes; i++) {
 
     const imageObj = {
         name: imageName,
-        thumb: `src/assets/designs/socialmedia/thumbs/${imageName}.webp`,
-        img: `src/assets/designs/socialmedia/${imageName}.webp`,
+        thumb: `/designs/socialmedia/thumbs/${imageName}.webp`,
+        img: `/designs/socialmedia/${imageName}.webp`,
         width,
         height,
         isVertical,

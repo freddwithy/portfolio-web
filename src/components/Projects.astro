@@ -6,6 +6,7 @@ import MySQL from '../icons/MySQL.astro'
 import ShadCN from '../icons/ShadCN.astro'
 import PlanetScale from '../icons/PlanetScale.astro'
 import Tags from "./Tags.astro"
+import { Image } from "astro:assets"
 
 const TOOL_TAGS = {
     TAILWIND: {
@@ -44,7 +45,7 @@ const PROJECTS = [
     {
         name: "ElectroFrio - 2024 (En progreso...)",
         desc: "Una landing page para una importante empresa de climatización de    la región en donde vivo, encargandome del diseño UI, UX, el responsive, el SEO y    de más.",
-        img: "src/assets/projects/electrofrio.webp",
+        img: "projects/electrofrio.webp",
         alt: "electrofrio",
         tags: [TOOL_TAGS.ASTRO, TOOL_TAGS.TAILWIND],
         link: "https://electrofrio-demo.netlify.app/"
@@ -52,7 +53,7 @@ const PROJECTS = [
     {
         name: "Flesh CMS - 2024 (En progreso...)",
         desc: "Un CMS dashboard para controlar productos, categorias, detalles y otros aspectos de un E-Commerce, desarrollado para iStore.",
-        img: "src/assets/projects/fleshcms.webp",
+        img: "projects/fleshcms.webp",
         alt: "fleshcms",
         tags: [TOOL_TAGS.NEXTJS, TOOL_TAGS.TAILWIND, TOOL_TAGS.MYSQL, TOOL_TAGS.PLANETSCALE, TOOL_TAGS.SHADCN],
         link: "https://istore-ecommerce-dashboard.vercel.app"
