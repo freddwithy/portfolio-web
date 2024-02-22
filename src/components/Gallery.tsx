@@ -87,7 +87,7 @@ export const Gallery = ({ galeria }: Props) => {
             </article>
             {currentImagesCount < galeria.length &&
                 <button 
-                    class='py-2 px-4 bg-black/20  border rounded-3xl text-white border-white/20 my-8 backdrop-blur-sm fixed bottom-12 translate-y-64 z-10 hover:text-yellow-200 hover:scale-105 transition-all'  
+                    class='py-2 px-4 bg-black/20  border rounded-3xl text-white border-white/20 my-8 backdrop-blur-sm fixed md:bottom-12 bottom-20 translate-y-64 z-10 hover:text-yellow-200 hover:scale-105 transition-all'  
                     onClick={handleLoadMore}
                     id="loadButton"
                     >
