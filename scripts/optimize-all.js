@@ -2,7 +2,7 @@ import { glob } from 'glob';
 import sharp from 'sharp';
 import { join, dirname, basename, extname } from 'path';
 
-const files = glob.sync('public/designs/manipulations/*.png', {
+const files = glob.sync('public/designs/socialmedia/thumbs/*.png', {
   nodir: true,
 });
 

@@ -1,8 +1,8 @@
 import { glob } from 'glob';
 import sharp from 'sharp';
-import { join, dirname, basename } from 'path';
+import { join, dirname, basename, extname } from 'path';
 
-const files = glob.sync('public/designs/socialmedia/*.png', {
+const files = glob.sync('public/designs/socialmedia/*.webp', {
   nodir: true,
 });
 
@@ -10,7 +10,8 @@ async function processImages() {
   for (const file of files) {
     if (file) {
       console.info(`Converting ${file}`);
-      const newFilePath = join(dirname(file), 'thumbs', basename(file));
+      const newFileName = `${basename(file, extname(file))}.webp`;
+      const newFilePath = join(dirname(file), 'thumbs', newFileName);
   
       const convert = sharp(file)
         .webp({
