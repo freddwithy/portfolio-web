@@ -1,10 +1,9 @@
 ---
 import SectionContainer from "../../components/SectionContainer.astro";
-import 'photoswipe/style.css';
 import Brush from "../../icons/Brush.astro";
 import Layout from "../../layouts/Layout.astro";
-import FullGallery from "../../components/FullGallery.astro";
 import sharp from "sharp";
+import { Gallery } from "../../components/Gallery";
 
 const totalDeImagenes = 36;  // Puedes ajustar esto según la cantidad de imágenes que desees
 const galeriaIncremental = [];
@@ -23,7 +22,7 @@ for (let i = 0; i <= totalDeImagenes; i++) {
     const height = imageMeta.height as number
     const width = imageMeta.width as number
 
-    const isVertical = height === 1080 ? true : false
+    const isVertical = (height > 1080) && (height <= 1920)
 
     const imageObj = {
         name: imageName,
@@ -51,8 +50,9 @@ for (let i = 0; i <= totalDeImagenes; i++) {
                 En esta sección podrás ver mis <span class="dark:text-yellow-200">mejores diseños</span>  hechos con <span class="dark:text-red-300">Photoshop, Illustrator y otros.</span> Todo esto fue 100% diseñado por mí.
             </h2>
         </div>
-        <FullGallery 
+        <Gallery 
             galeria={galeriaIncremental}
+            client:only
         />
     </SectionContainer>
-</Layout>../../components/Gallery.jsx
+</Layout>

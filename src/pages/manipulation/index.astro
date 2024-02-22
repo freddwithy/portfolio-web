@@ -3,7 +3,7 @@ import SectionContainer from "../../components/SectionContainer.astro";
 import 'photoswipe/style.css';
 import Brush from "../../icons/Brush.astro";
 import Layout from "../../layouts/Layout.astro";
-import FullGallery from "../../components/FullGallery.astro";
+import { Gallery } from "../../components/Gallery";
 
 const GALLERY = [
     {
@@ -60,8 +60,9 @@ const GALLERY = [
                 En esta sección podrás ver mis <span class="dark:text-yellow-200">mejores manipulaciones de imagenes o fotomontajes</span>  hechos con <span class="dark:text-red-300">Photoshop especialmente</span> Todo esto fue 100% diseñado por mí.
             </h2>
         </div>
-        <FullGallery 
+        <Gallery 
             galeria={GALLERY}
+            client:only 
         />
     </SectionContainer>
 </Layout>
