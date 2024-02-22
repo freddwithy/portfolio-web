@@ -4,33 +4,40 @@ import 'photoswipe/style.css';
 import Brush from "../../icons/Brush.astro";
 import Layout from "../../layouts/Layout.astro";
 import FullGallery from "../../components/FullGallery.astro";
+import sharp from "sharp";
 
-const GALLERY = [
-    {
-        name: "duosantti",
-        thumb: "/designs/thumbs/duosantti.webp",
-        img: "/designs/duosantti.png",
-        width: "1920",
-        height: "1080",
-        isVertical: false
-    },
-    {
-        name: "revtek",
-        thumb: "/designs/thumbs/revtek.webp",
-        img: "/designs/revtek.png",
-        width: "808",
-        height: "632",
-        isVertical: true
-    },
-    {
-        name: "yellow",
-        thumb: "/designs/thumbs/yellow.webp",
-        img: "/designs/yellow.png",
-        width: "1920",
-        height: "1080",
-        isVertical: false
-    }
-]
+const totalDeImagenes = 36;  // Puedes ajustar esto según la cantidad de imágenes que desees
+const galeriaIncremental = [];
+
+
+const generateIncrementalName = (baseName: string, index: number): string => {
+    return `${baseName}_${index}`;
+};
+
+for (let i = 0; i <= totalDeImagenes; i++) {
+    const baseName = "img";  // Puedes cambiar esto a otros nombres según tus necesidades
+    const imageName = generateIncrementalName(baseName, i);
+    const imagePath = `public/designs/socialmedia/${imageName}.png`;
+    
+    const imageMeta = await sharp(imagePath).metadata()
+    const height = imageMeta.height as number
+    const width = imageMeta.width as number
+
+    const isVertical = height === 1080 ? true : false
+
+    const imageObj = {
+        name: imageName,
+        thumb: `/designs/socialmedia/thumbs/${imageName}.png`,
+        img: `/designs/socialmedia/${imageName}.png`,
+        width,
+        height,
+        isVertical,
+    };
+
+
+
+    galeriaIncremental.push(imageObj);
+}
 ---
 
 <Layout title="Freddy Sanabria - Galería de Diseños y Montajes" description="Conoce todos algunos de mis diseños más destacables">
@@ -45,7 +52,7 @@ const GALLERY = [
             </h2>
         </div>
         <FullGallery 
-            galeria={GALLERY}
+            galeria={galeriaIncremental}
         />
     </SectionContainer>
 </Layout>

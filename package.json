@@ -7,6 +7,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "optimize": "node scripts/create-thumbnail.js",
     "astro": "astro"
   },
   "dependencies": {
@@ -14,9 +15,14 @@
     "@astrojs/preact": "^3.1.0",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/onest": "^5.0.2",
+    "@types/sharp": "^0.32.0",
     "astro": "^4.3.0",
+    "glob": "^10.3.10",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^8.0.0",
     "photoswipe": "^5.4.3",
     "preact": "^10.19.3",
+    "sharp": "^0.33.2",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }
