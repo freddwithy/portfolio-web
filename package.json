@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "optimize": "node scripts/create-thumbnail.js",
+    "create-thumb": "node scripts/create-thumbnail.js",
+    "optimize-all": "node scripts/optimize-all.js",
     "astro": "astro"
   },
   "dependencies": {
