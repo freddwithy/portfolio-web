@@ -66,7 +66,7 @@ export const Gallery = ({ galeria }: Props) => {
                 <div className="grid grid-cols-1 gap-2 self-start">
                     {visibleVerticalImagesArray.map(({ name, width, thumb, height, img, isVertical }) => (
                         isVertical && (
-                            <a key={name} className='shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-md border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60'
+                            <a key={name} className='shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-md border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60 animate-fade-up'
                                 href={img}
                                 target="_blank"
                                 data-pswp-width={width}
@@ -84,7 +84,7 @@ export const Gallery = ({ galeria }: Props) => {
                 <div className="grid grid-cols-1 gap-2 self-start">
                     {visibleHorizontalImagesArray.map(({ name, width, thumb, height, img, isVertical }) => (
                         !isVertical && (
-                            <a key={name} className='shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-md border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60'
+                            <a key={name} className='shadow-lg shadow-black/25 overflow-hidden hover:scale-[1.01] transition-all ease-out duration-300 w-full rounded-md border border-transparent dark:border-transparent hover:border-violet-600 dark:hover:border-blue-300/60 animate-fade-up'
                                 href={img}
                                 target="_blank"
                                 data-pswp-width={width}

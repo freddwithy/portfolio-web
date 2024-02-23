@@ -15,7 +15,7 @@ import UserCircle from '../icons/UserCircle.astro';
 
 <Layout title="Freddy Sanabria - Desarrollador Web y Diseñador Gráfico de Paraguay" description="Creando aplicaciones web únicas y diseños impactantes para tu marca. Me encargo de crear la página web y diseño que necesites.">
 	<main>
-		<SectionContainer class="pt-44 lg:pt-56 pb-16 lg:pb-10 h-screen lg:h-auto lg:max-w-[740px]">
+		<SectionContainer class="pt-44 lg:pt-56 pb-16 lg:pb-10 h-screen lg:h-auto lg:max-w-[740px] animate-fade-up">
 			<div class="flex flex-col gap-y-4 lg:gap-x-4 lg:flex-row items-center mb-4">
 				<img src="/avatar.webp" alt="avatar" class="rounded-full w-32 h-32 lg:hidden">
 				<h1 class="font-bold text-4xl lg:text-5xl dark:text-white">Hey, soy Fredd</h1>
@@ -40,14 +40,14 @@ import UserCircle from '../icons/UserCircle.astro';
 				</SocialPill>
 			</nav>
 		</SectionContainer>
-		<SectionContainer class="mt-20 lg:max-w-[740px]" id="experience">
+		<SectionContainer class="mt-20 lg:max-w-[740px] animate-fade-up animate-delay-200" id="experience">
 			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
 				<BriefcaseIcon class="size-8 "/>
 				Experiencia Laboral
 			</h2>
 			<Experience />
 		</SectionContainer>
-		<SectionContainer class="flex flex-col lg:max-w-[740px]" id="projects">
+		<SectionContainer class="flex flex-col lg:max-w-[740px] animate-fade-up animate-delay-300" id="projects">
 			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
 				<CodeIcon class="size-8"/>
 				Proyectos
@@ -83,4 +83,4 @@ import UserCircle from '../icons/UserCircle.astro';
 		</SectionContainer>
 	</main>
 </Layout>
- 
+ ../components/UpButton.tsx
