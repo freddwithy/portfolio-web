@@ -21,10 +21,14 @@ export const Gallery = ({ galeria }: Props) => {
 
     const [visibleHorizontalImages, setHorizontalVisibleImages] = useState(4)
     const [visibleVerticalImages, setVerticalVisibleImages] = useState(2)
+    const [loading, setLoading] = useState(false)
 
-    const handleLoadMore = () => {
+
+    const handleLoadMore = async () => {
+        setLoading(true)
         setHorizontalVisibleImages(prev => prev + 3)
         setVerticalVisibleImages(prev => prev + 2)
+        setLoading(false)
     }
 
     const visibleVerticalImagesArray = verticalImages.slice(0, visibleVerticalImages)
@@ -40,7 +44,6 @@ export const Gallery = ({ galeria }: Props) => {
             pswpModule: () => import('photoswipe')
         });
         lightbox.init()
-        
         return 
     }, [])
     
@@ -102,11 +105,11 @@ export const Gallery = ({ galeria }: Props) => {
             </article>
             {currentImagesCount < galeria.length &&
                 <button 
-                    class='py-2 px-4 bg-black/20  border rounded-3xl text-white border-white/20 my-8 backdrop-blur-sm fixed md:bottom-12 bottom-20 z-10 hover:text-yellow-200 hover:scale-105 transition-all'  
+                    class={'py-2 px-4 bg-black/20  border rounded-3xl text-white border-white/20 my-8 backdrop-blur-sm fixed md:bottom-12 bottom-20 z-10 hover:text-yellow-200 hover:scale-105 transition-all' + (loading ? ' cursor-not-allowed' : ' cursor-pointer')}  
                     onClick={handleLoadMore}
                     id="loadButton"
                     >
-                        Cargar mas...
+                        {loading ? 'Cargando...' : 'Cargar más'}
                 </button>
             }
         </>
