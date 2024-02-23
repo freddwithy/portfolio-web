@@ -43,7 +43,7 @@ export const Gallery = ({ galeria }: Props) => {
         
         return 
     }, [])
-
+    
     window.addEventListener('scroll', () => {
         const loadButton = document.getElementById('loadButton');
         const scrollPosition = window.scrollY;

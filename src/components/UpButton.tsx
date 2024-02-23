@@ -10,12 +10,12 @@ export const UpButton = () => {
             });
 
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 20) {
+                if (window.scrollY > 30 || document.documentElement.scrollTop > 30) {
                     upButton.classList.add('show');
                     upButton.classList.remove('hide');
                 } else {
-                    upButton.classList.remove('show');
                     upButton.classList.add('hide');
+                    upButton.classList.remove('show');
                 }
             });
         }
@@ -23,7 +23,7 @@ export const UpButton = () => {
 
     return (
         <div
-            class="bg-black/30 border border-white/20 p-2 flex text-white justify-center items-center fixed bottom-28 right-16 md:bottom-20 md:right-64 rounded-full size-10 cursor-pointer backdrop-blur-lg z-10 hover:scale-105 transition-all hover:text-yellow-200 duration-150"
+            class="bg-black/30 border border-white/20 p-2 text-white justify-center items-center fixed bottom-28 right-16 md:bottom-20 md:right-64 rounded-full size-10 cursor-pointer backdrop-blur-lg z-10 hover:scale-105 transition-all hover:text-yellow-200 duration-150"
             id="upButton"
         >
             <ArrowUp />
