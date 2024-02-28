@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import HeaderMobile from '../components/HeaderMobile.astro';
 import { UpButton } from '../components/UpButton.tsx';
 // Supports weights 100-900
 import '@fontsource-variable/onest';
@@ -28,10 +29,15 @@ const { currentLocale } = Astro;
 	<body class="dark:text-white text-black">
 		<div class="dark:lg:flex fixed inset-0 hidden z-[-2] h-screen w-screen bg-slate-950  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
 		<div class="dark:hidden hidden lg:flex fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div></div>
-		<Header />
+		<header class="lg:flex justify-center"> 
+			<Header />
+			<HeaderMobile />
+		</header>
 		<UpButton client:visible />
 		<slot />
-		<Footer />
+		<footer class="flex justify-center ">
+			<Footer />
+		</footer>
 	</body>
 </html>
 <style is:global>
@@ -45,7 +51,6 @@ const { currentLocale } = Astro;
 	body {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		min-height: 100vh;
 		background-color: rgb(2 6 23);
 	}
@@ -80,13 +85,7 @@ const { currentLocale } = Astro;
 		#upButton.hide {
 			animation: fadeOut 0.5s ease-out;
 			animation-fill-mode: forwards;
-		}
-
-		#selected-language #selected-img {
-			animation: avatar-blur linear both 0.5s;
-			animation-timeline: scroll();
-			animation-range: 0 300px;
-		}
+		} 
 
 		#dropdown-menu.show {
 			animation: dropwdownShow 0.2s ease-out forwards;
@@ -94,6 +93,35 @@ const { currentLocale } = Astro;
 
 		#dropdown-menu.hide {
 			animation: dropdownHide 0.2s ease-out forwards;
+		}
+
+		#mobile-header.open {
+			animation: openNav 0.3s ease-in-out forwards;
+		}
+
+		#mobile-header.close {
+			animation: closeNav 0.3s ease-in-out forwards;
+		}
+
+
+		@keyframes openNav {
+			from {
+				transform: translateY(-100%);
+			}
+			to {
+				display: flex;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes closeNav {
+			from {
+				display: flex;
+				transform: translateY(0);
+			}
+			to {
+				transform: translateY(-100%);
+			}
 		}
 
 
@@ -151,9 +179,13 @@ const { currentLocale } = Astro;
 		}
 
 	  	@keyframes avatar-blur {
+			from {
+				opacity: 1;
+			}
 			to {
-				width: 25px;
-				height: 25px;
+				opacity: 0;
+				width: 20px;
+				height: 20px;
 			}
 		}
 
@@ -175,7 +207,7 @@ const { currentLocale } = Astro;
             padding-bottom: 0.40rem;
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 9999px;
-			width: 430px;
+			width: 490px;
           }
         }
 </style>
