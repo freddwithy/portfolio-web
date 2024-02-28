@@ -31,7 +31,7 @@ const translatePath = useTranslatedPath(lang);
     const menu = document.getElementById('dropdown-menu');
 
     if (dropdown && menu) {
-        dropdown.addEventListener('pointerdown', () => {
+        dropdown.addEventListener('click', () => {
             if (menu.classList.contains('hide') || menu.classList.contains('hidden')) {
                 menu.classList.remove('hide');
                 menu.classList.add('show');
@@ -48,7 +48,7 @@ const translatePath = useTranslatedPath(lang);
         });
     }
 
-    document.addEventListener('pointerdown', (event) => {
+    document.addEventListener('click', (event) => {
         const target = event.target as HTMLElement;
         if (!dropdown?.contains(target) && !menu?.contains(target)) {
             menu?.classList.add('hide');
