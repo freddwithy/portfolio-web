@@ -12,11 +12,11 @@ const translatePath = useTranslatedPath(lang);
 <div class="relative flex items-center z-50" id="dropdown">
         <div class="flex gap-x-2 items-center hover:scale-105 transition bg-white/10 px-3 py-1 rounded-lg cursor-pointer z-50" id="selected-language">
             { lang === "en" ? "English" : "Español"}
-            { lang === "en" ? <Unitedstates class="size-4 md:size-6 rounded-full hover:scale-105 transition" id="selected-img"/> : <Paraguay class="size-4 md:size-6 rounded-full hover:scale-105 transition" id="selected-img"/>}
+            { lang === "en" ? <Unitedstates class="size-4  rounded-full hover:scale-105 transition" id="selected-img"/> : <Paraguay class="size-4  rounded-full hover:scale-105 transition" id="selected-img"/>}
         </div>
-        <ul class="hidden absolute top-12 z-50 -translate-x-1/2 bg-black/60 backdrop-blur-md rounded-lg left-1/2 overflow-hidden" id="dropdown-menu">
+        <ul class="hidden absolute top-12 z-50 -translate-x-1/2 rounded-lg left-1/2 overflow-hidden border border-white/20 bg-slate-900/60 backdrop-blur-sm" id="dropdown-menu">
             {Object.entries(languages).map(([ lang ]) => (
-                <li class="cursor-pointer hover:scale-105 transition-all space-y-2 hover:bg-white/10 w-full py-2 px-4" id="option">
+                <li class="cursor-pointer transition-all space-y-2 hover:bg-white/10 w-full py-2 px-4" id="option">
                     <a href={translatePath("/", lang)} class="flex gap-x-2 items-center">
                         { lang === "en" ? <Unitedstates class="size-6 rounded-full" /> : <Paraguay class="size-6 rounded-full" />}
                         { lang === "en" ? "English" : "Español"}

@@ -1,7 +1,6 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import HeaderMobile from '../components/HeaderMobile.astro';
 import { UpButton } from '../components/UpButton.tsx';
 // Supports weights 100-900
 import '@fontsource-variable/onest';
@@ -29,9 +28,8 @@ const { currentLocale } = Astro;
 	<body class="dark:text-white text-black">
 		<div class="dark:lg:flex fixed inset-0 hidden z-[-2] h-screen w-screen bg-slate-950  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
 		<div class="dark:hidden hidden lg:flex fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div></div>
-		<header class="lg:flex justify-center"> 
+		<header class="flex justify-center"> 
 			<Header />
-			<HeaderMobile />
 		</header>
 		<UpButton client:visible />
 		<slot />
@@ -55,19 +53,6 @@ const { currentLocale } = Astro;
 		background-color: rgb(2 6 23);
 	}
 
-	@media (min-width: 740px) {
-		#header-nav {
-			animation: blur linear both 0.5s;
-			animation-timeline: scroll();
-			animation-range: 0 300px;
-		}
-	}
-
-		#avatar {
-			animation: avatar-blur linear both 0.5s;
-			animation-timeline: scroll();
-			animation-range: 0 300px;
-	  	}
 
 		#loadButton.show {
 			animation: fadeIn 0.5s ease-out;
