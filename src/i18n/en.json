@@ -1,0 +1,123 @@
+{
+    "MAIN_PAGE": {
+        "SEO_TITLE": "Freddy Sanabria - Web Developer and Graphic Designer from Paraguay",
+        "SEO_DESCRIPTION": "Creating unique web applications and stunning designs for your brand. I take care of creating the web page and design you need.",
+        "HEADER": {
+            "NAV_LINKS": {
+                    "EXPERIENCE": {
+                        "TITLE": "Experience",
+                        "LINK": "#experience"
+                    },
+                    "PROJECTS": {
+                        "TITLE": "Projects",
+                        "LINK": "#projects"
+                    },
+                    "DESIGNS": {
+                        "TITLE": "Designs",
+                        "LINK": "#gallery"
+                    },
+                    "HOME_LINK": "/en"
+            }      
+        },
+        "HERO": {
+            "TITLE": "Hi, I'm Fredd",
+            "BADGE": "Available for work",
+            "DESCRIPTION": {
+                "PART_1": "Junior Frontend Web Developer",
+                "PART_2": "and",
+                "PART_3": "Graphic Designer",
+                "PART_4": " from Ciudad Del Este, Paraguay. Specialized in creating web applications with the visual identity that ",
+                "PART_5": "your company needs."
+            }
+        },
+        "CONTENT": {
+            "SECTION": {
+                "EXPERIENCE_TITLE": "Work experience",
+                "PROJECTS_TITLE": "Projects",
+                "DESIGNS_TITLE": "Designs",
+                "CONTACT_TITLE": "Contact",
+                "ABOUT_TITLE": "About me"
+            }
+        },
+        "EXPERIENCE": {
+            "JOB_1": {
+                "DATE": "Currently",
+                "TITLE": "Freelance Graphic Designer and Developer",
+                "DESCRIPTION": "Starting my programming career with small not very complex projects and at the same time I continue to create content for various companies as a graphic designer, for social networks, advertising, etc. In addition to also editing videos for social networks and programming content for companies that need it."
+            },
+            "JOB_2": {
+                "DATE": "January 2023",
+                "TITLE": "Graphic Designer and Video Editor - iStore",
+                "DESCRIPTION": "Responsible for creating managing the daily content of everything related to the visuals of the company, on social networks, website, advertising, etc. I made sure to generate the best possible content to attract customers."
+            }
+        },
+        "PROJECTS": {
+            "PROJECT_1": {
+                "TITLE": "ElectroFrio - 2024 (Work in progress...)",
+                "DESCRIPTION": "A landing page for an important air conditioning company in the region where I live, taking care of the UI, UX design, responsive, SEO and more."
+            },
+            "PROJECT_2": {
+                "TITLE": "Flesh CMS - 2024 (Work in progress...)",
+                "DESCRIPTION": "A CMS dashboard to control products, categories, details and other aspects of an E-Commerce, developed for iStore."
+            },
+            "MORE_TEXT": "View project"
+        },
+        "DESIGN_SECTION": {
+            "SOCIALMEDIA": {
+                "TITLE": "Social Media",
+                "DESCRIPTION": "Some of the designs I have created for social media, such as banners, posts, etc. These designs are made to promote products, services, or events.",
+                "LINK_TO": "/en/socialmedia"
+            },
+            "PHOTOMANIPULATION": {
+                "TITLE": "Photo Manipulation",
+                "DESCRIPTION": "Some of the photomontages I have created for different projects, such as image editing, photomontages, etc.",
+                "LINK_TO": "/en/photo-manipulation"
+            },
+            "MORE_TEXT": "See more"
+        },
+        "FOOTER": {
+            "MAIN_TEXT": "© 2023 Freddy Sanabria.",
+            "NAV_LINK_1": {
+                "TITLE": "About me",
+                "LINK": "#about"
+            },
+            "NAV_LINK_2": {
+                "TITLE": "Contact",
+                "LINK": "#contact"
+            }
+        },
+        "EXTRA": {
+            "TITLE": "This portfolio is a work in progress, a lot of content is missing... :)"
+        }
+    },
+    "DESIGNS_PAGE": {
+        "SEO_TITLE": "Freddy Sanabria - Graphic Designs from Paraguay",
+        "SEO_DESCRIPTION": "Get to know some of my most remarkable designs of banners, publications, photomontages, etc.",
+        "CONTENT": {
+            "SECTION": {
+                "TITLE": "Social Media",
+                "DESCRIPTION": {
+                    "PART_1": "Some of the",
+                    "PART_2": "designs I have made",
+                    "PART_3": "for social networks, such as banners, publications, etc.",
+                    "PART_4": "These designs are made to promote",
+                    "PART_5": "products, services, or events."
+                }
+            }
+        }
+    },
+    "MANIPULATION_PAGE": {
+        "SEO_TITLE": "Freddy Sanabria - Photomontages and Image Editing from Paraguay",
+        "SEO_DESCRIPTION": "Get to know some of my most remarkable designs of photomontages and image editing",
+        "CONTENT": {
+            "SECTION": {
+                "TITLE": "Photo Manipulation",
+                "DESCRIPTION": {
+                    "PART_1": "Some of the",
+                    "PART_2": "photomontages I have made",
+                    "PART_3": "for different projects, such as image editing, photomontages, etc."
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl } from '../i18n/utils';
+import { useTranslatedPath } from '../i18n/utils';
+import Paraguay from '../icons/paraguay.astro';
+import Unitedstates from '../icons/unitedstates.astro';
+
+const lang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(lang);
+---
+
+<div class="cursor-pointer transition relative flex items-center justify-center" id="dropdown">
+        <div class="" id="selected-language">
+            { lang === "en" ? <Unitedstates class="size-8 rounded-full hover:scale-105 transition" id="selected-img"/> : <Paraguay class="size-8 rounded-full hover:scale-105 transition" id="selected-img"/>}
+        </div>
+        <ul class="hidden absolute top-10 space-y-2 -translate-x-1/2 bg-black/60 backdrop-blur-md rounded-full py-4 px-2 left-1/2" id="dropdown-menu">
+            {Object.entries(languages).map(([ lang ]) => (
+                <li class="cursor-pointer hover:scale-105 transition" id="option">
+                    <a href={translatePath("/", lang)}>
+                        { lang === "en" ? <Unitedstates class="size-8 rounded-full" /> : <Paraguay class="size-8 rounded-full" />}
+                    </a>
+                </li>
+            ))}
+        </ul>
+</div>
+
+<script>
+    const dropdown = document.getElementById('dropdown');
+    const menu = document.getElementById('dropdown-menu');
+
+    dropdown?.addEventListener('click', () => {
+        if (menu?.classList.contains('hide') || menu?.classList.contains('hidden')) {
+            menu.classList.remove('hide');
+            menu.classList.add('show');
+            setTimeout(() => {
+                menu?.classList.remove('hidden');
+            }, 100);
+        } else {
+            menu?.classList.add('hide');
+            menu?.classList.remove('show');
+            setTimeout(() => {
+                menu?.classList.add('hidden');
+            }, 300);
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement;
+        if (!dropdown?.contains(target) && !menu?.contains(target)) {
+            menu?.classList.add('hide');
+            menu?.classList.remove('show');
+            setTimeout(() => {
+                menu?.classList.add('hidden');
+            }, 300);
+        }
+    });
+</script>

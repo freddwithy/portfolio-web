@@ -1,26 +1,25 @@
 ---
-import ExperiencieItem from "./ExperiencieItem.astro"
+import { getI18n } from "../i18n/ui";
+import ExperienceItem from "./ExperienceItem.astro"
 
-const EXPERIENCIE = [
-    {
-        date: 'Actualmente',
-        title: 'Diseñador gráfico y Desarrollador Freelancer',
-        desc: 'Comenzando mi carrera de programación con pequeños proyectos no muy complejos y a la par sigo creando contenido para varias empresas como diseñador gráfico, para redes sociales, publicidad, etc. Además de también editar videos para redes sociales y programar contenidos para las empresas que necesiten.'
-    },
-    {
-        date: 'Enero 2023',
-        title: 'Diseñador gráfico - iStore',
-        desc: 'Responsable de crear manejar el contenido diario de todo lo relacionado a los visuales de la empresa, en redes sociales, pagina web, publicidad, etc. Me aseguraba de generar el mejor contenido posible para atraer clientes.'
-    }
-]
+const { currentLocale = "es" } = Astro;
+const i18n = getI18n({ currentLocale })
+
+const EXPERIENCIE = i18n.MAIN_PAGE.EXPERIENCE
 ---
 <ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3.5">  
-    {
-        EXPERIENCIE.map(exp => (
-            <li class="mb-10 ms-4">
-                <ExperiencieItem {...exp} />
-            </li>
-        ))
-    }                   
+    <li class="mb-10 ms-4">
+        <ExperienceItem 
+            title={EXPERIENCIE.JOB_1.TITLE},
+            date={EXPERIENCIE.JOB_1.DATE},
+            desc={EXPERIENCIE.JOB_1.DESCRIPTION}
+        />
+    </li>
+    <li class="mb-10 ms-4">
+        <ExperienceItem 
+            title={EXPERIENCIE.JOB_2.TITLE},
+            date={EXPERIENCIE.JOB_2.DATE},
+            desc={EXPERIENCIE.JOB_2.DESCRIPTION}
+        />
+    </li>                  
 </ol>
-

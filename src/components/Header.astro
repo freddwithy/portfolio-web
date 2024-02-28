@@ -1,23 +1,34 @@
 ---
-const NAV_LINKS = [
+import { getI18n } from "../i18n/ui"
+import LanguageSelector from "./LanguageSelector.astro"
+
+const { currentLocale = 'es' } = Astro
+const i18n = getI18n({ currentLocale })
+
+const navItems = i18n.MAIN_PAGE.HEADER.NAV_LINKS
+
+const NAV_LINKS = []
+
+NAV_LINKS.push(
     {
-        title: 'Experiencia',
-        link: '/#experience'
+        title: navItems.EXPERIENCE.TITLE,
+        link: navItems.EXPERIENCE.LINK
     },
     {
-        title: 'Proyectos',
-        link: '/#projects'
+        title: navItems.PROJECTS.TITLE,
+        link: navItems.PROJECTS.LINK
     },
     {
-        title: 'Diseños',
-        link: '/#gallery'
-    },
-]
+        title: navItems.DESIGNS.TITLE,
+        link: navItems.DESIGNS.LINK
+    
+    }
+)
 ---
 
 
 <header id="header-nav" class="flex justify-center lg:justify-between items-center lg:mx-auto my-8 lg:my-4 p-2 fixed bg-slate-900/60 backdrop-blur-sm border border-white/20 lg:bg-transparent lg:w-[1120px] rounded-full z-10 lg:gap-x-4">
-    <a href="/">
+    <a href={navItems.HOME_LINK}>
         <img src="/avatar.webp" alt="avatar" class="hidden lg:size-10 rounded-full md:flex hover:scale-105 transition-all" id="avatar">
     </a>
     <nav class="flex lg:gap-x-8 lgmx-3 gap-x-2 mx-2 items-center">
@@ -26,5 +37,6 @@ const NAV_LINKS = [
                 <a href={link.link} class="hover:text-yellow-700 dark:text-white transition-colors dark:hover:text-yellow-200 text-white lg:text-black ease-linear text-sm lg:text-base">{link.title}</a>
             ))
         }
+        <LanguageSelector />
     </nav>
 </header>

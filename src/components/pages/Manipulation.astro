@@ -3,7 +3,11 @@ import SectionContainer from "../../components/SectionContainer.astro";
 import 'photoswipe/style.css';
 import Brush from "../../icons/Brush.astro";
 import Layout from "../../layouts/Layout.astro";
-import { Gallery } from "../../components/Gallery";
+import { Gallery } from "../Gallery";
+import { getI18n } from "../../i18n/ui";
+
+const { currentLocale = 'es' } = Astro
+const i18n = getI18n({ currentLocale })
 
 const GALLERY = [
     {
@@ -49,15 +53,15 @@ const GALLERY = [
 ]
 ---
 
-<Layout title="Freddy Sanabria - Galería de Diseños y Montajes" description="Conoce todos algunos de mis diseños más destacables">
+<Layout title={i18n.MANIPULATION_PAGE.SEO_TITLE} description={i18n.MANIPULATION_PAGE.SEO_DESCRIPTION}>
     <SectionContainer class="mt-36 lg:max-w-[1120px] flex flex-col items-center gap-4">
         <div class="max-w-[740px] mx-auto flex flex-col items-center gap-4">
             <h1 class='flex  gap-2 md:gap-4 text-3xl lg:text-4xl dark:text-white font-bold'> 
                 <Brush class="size-8 lg:size-10"/>
-                Fotomontajes
+                {i18n.MANIPULATION_PAGE.CONTENT.SECTION.TITLE}
             </h1>
             <h2 class="dark:text-white/70 text-pretty text-center text-lg">
-                En esta sección podrás ver mis <span class="dark:text-yellow-200">mejores manipulaciones de imagenes o fotomontajes</span>  hechos con <span class="dark:text-red-300">Photoshop especialmente</span> Todo esto fue 100% diseñado por mí.
+                {i18n.MANIPULATION_PAGE.CONTENT.SECTION.DESCRIPTION.PART_1} <span class="text-yellow-200">{i18n.MANIPULATION_PAGE.CONTENT.SECTION.DESCRIPTION.PART_2}</span> {i18n.MANIPULATION_PAGE.CONTENT.SECTION.DESCRIPTION.PART_3}
             </h2>
         </div>
         <Gallery 

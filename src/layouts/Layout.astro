@@ -4,7 +4,6 @@ import Header from '../components/Header.astro';
 import { UpButton } from '../components/UpButton.tsx';
 // Supports weights 100-900
 import '@fontsource-variable/onest';
-import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -12,10 +11,12 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+const { currentLocale } = Astro;
 ---
 
 <!doctype html>
-<html lang="es" class="dark">
+<html lang={currentLocale} class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -81,6 +82,20 @@ const { title, description } = Astro.props;
 			animation-fill-mode: forwards;
 		}
 
+		#selected-language #selected-img {
+			animation: avatar-blur linear both 0.5s;
+			animation-timeline: scroll();
+			animation-range: 0 300px;
+		}
+
+		#dropdown-menu.show {
+			animation: dropwdownShow 0.2s ease-out forwards;
+		}
+
+		#dropdown-menu.hide {
+			animation: dropdownHide 0.2s ease-out forwards;
+		}
+
 
 		@keyframes fadeIn {
 			from {
@@ -88,11 +103,33 @@ const { title, description } = Astro.props;
 				transform: translateY(20px);
 			}
 			to {
-				display: flex;
+				display: block;
 				opacity: 1;
 				transform: translateY(0);
 			}
-		}	
+		}
+
+		@keyframes dropwdownShow {
+			from {
+				opacity: 0;
+				transform: translateY(-20px) translateX(-50%)
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0px) translateX(-50%)
+			}
+		}
+
+		@keyframes dropdownHide {
+			from {
+				opacity: 1;
+				transform: translateY(0px) translateX(-50%)
+			}
+			to {
+				opacity: 0;
+				transform: translateY(-20px) translateX(-50%)
+			}
+		}
 
 		@keyframes fadeOut {
 			from {
@@ -138,7 +175,7 @@ const { title, description } = Astro.props;
             padding-bottom: 0.40rem;
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 9999px;
-			width: 380px;
+			width: 430px;
           }
         }
 </style>

@@ -3,7 +3,11 @@ import SectionContainer from "../../components/SectionContainer.astro";
 import Brush from "../../icons/Brush.astro";
 import Layout from "../../layouts/Layout.astro";
 import sharp from "sharp";
-import { Gallery } from "../../components/Gallery";
+import { Gallery } from "../Gallery";
+import { getI18n } from "../../i18n/ui";
+
+const { currentLocale = 'es' } = Astro
+const i18n = getI18n({ currentLocale })
 
 const totalDeImagenes = 36;  // Puedes ajustar esto según la cantidad de imágenes que desees
 const galeriaIncremental = [];
@@ -39,15 +43,15 @@ for (let i = 0; i <= totalDeImagenes; i++) {
 }
 ---
 
-<Layout title="Freddy Sanabria - Galería de Diseños y Montajes" description="Conoce todos algunos de mis diseños más destacables">
+<Layout title={i18n.DESIGNS_PAGE.SEO_TITLE} description={i18n.DESIGNS_PAGE.SEO_DESCRIPTION}>
     <SectionContainer class="mt-36 lg:max-w-[1120px] flex flex-col items-center gap-4">
         <div class="max-w-[740px] mx-auto lg:text-center flex flex-col items-center gap-4 justify-center">
             <h1 class='flex gap-2 md:gap-4 text-3xl lg:text-4xl dark:text-white font-bold items-center'> 
                 <Brush class="size-10 lg:size-10"/>
-                Social Media
+                {i18n.DESIGNS_PAGE.CONTENT.SECTION.TITLE}
             </h1>
             <h2 class="dark:text-white/70 text-pretty text-lg text-center">
-                En esta sección podrás ver mis <span class="dark:text-yellow-200">mejores diseños</span>  hechos con <span class="dark:text-red-300">Photoshop, Illustrator y otros.</span> Todo esto fue 100% diseñado por mí.
+                {i18n.DESIGNS_PAGE.CONTENT.SECTION.DESCRIPTION.PART_1}<span class="dark:text-yellow-200"> {i18n.DESIGNS_PAGE.CONTENT.SECTION.DESCRIPTION.PART_2}</span>  {i18n.DESIGNS_PAGE.CONTENT.SECTION.DESCRIPTION.PART_3} {i18n.DESIGNS_PAGE.CONTENT.SECTION.DESCRIPTION.PART_4}<span class="dark:text-red-300"> {i18n.DESIGNS_PAGE.CONTENT.SECTION.DESCRIPTION.PART_5}</span>
             </h2>
         </div>
         <Gallery 

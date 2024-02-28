@@ -8,5 +8,12 @@ export default defineConfig({
   integrations: [tailwind(), preact()],
   build: {
     output: "/src/assets"
+  },
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"],
+    routing: {
+      prefixDefaultLocale: false,
+    }
   }
 });

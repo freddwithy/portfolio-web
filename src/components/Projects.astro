@@ -6,6 +6,10 @@ import MySQL from '../icons/MySQL.astro'
 import ShadCN from '../icons/ShadCN.astro'
 import PlanetScale from '../icons/PlanetScale.astro'
 import Tags from "./Tags.astro"
+import { getI18n } from "../i18n/ui"
+
+const { currentLocale = "es" } = Astro;
+const i18n = getI18n({ currentLocale })
 
 const TOOL_TAGS = {
     TAILWIND: {
@@ -42,16 +46,16 @@ const TOOL_TAGS = {
 
 const PROJECTS = [
     {
-        name: "ElectroFrio - 2024 (En progreso...)",
-        desc: "Una landing page para una importante empresa de climatización de    la región en donde vivo, encargandome del diseño UI, UX, el responsive, el SEO y    de más.",
+        name: [i18n.MAIN_PAGE.PROJECTS.PROJECT_1.TITLE],
+        desc: [i18n.MAIN_PAGE.PROJECTS.PROJECT_1.DESCRIPTION],
         img: "/projects/electrofrio.webp",
         alt: "electrofrio",
         tags: [TOOL_TAGS.ASTRO, TOOL_TAGS.TAILWIND],
         link: "https://electrofrio-demo.netlify.app/"
     },
     {
-        name: "Flesh CMS - 2024 (En progreso...)",
-        desc: "Un CMS dashboard para controlar productos, categorias, detalles y otros aspectos de un E-Commerce, desarrollado para iStore.",
+        name: [i18n.MAIN_PAGE.PROJECTS.PROJECT_2.TITLE],
+        desc: [i18n.MAIN_PAGE.PROJECTS.PROJECT_2.DESCRIPTION],
         img: "/projects/fleshcms.webp",
         alt: "fleshcms",
         tags: [TOOL_TAGS.NEXTJS, TOOL_TAGS.TAILWIND, TOOL_TAGS.MYSQL, TOOL_TAGS.PLANETSCALE, TOOL_TAGS.SHADCN],
@@ -82,7 +86,7 @@ const PROJECTS = [
                 </div>
                 <p class="text-sm dark:text-gray-200 text-pretty">{desc}</p>
                 <a class='inline-flex h-12 mt-2 bg-violet-800 dark:animate-background-shine items-center justify-center rounded-full border border-gray-200 dark:border-white/30 dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 md:px-6 font-medium text-white dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 w-32 md:w-56 hover:scale-105 transition-all ease-in-out' href={link} target="_blank">
-                    Ver proyecto
+                    {i18n.MAIN_PAGE.PROJECTS.MORE_TEXT}
                 </a>
             </div>
         </article>

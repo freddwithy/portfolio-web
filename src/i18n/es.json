@@ -1,0 +1,123 @@
+{
+    "MAIN_PAGE": {
+        "SEO_TITLE": "Freddy Sanabria - Desarrollador Web y Diseñador Gráfico de Paraguay",
+        "SEO_DESCRIPTION": "Creando aplicaciones web únicas y diseños impactantes para tu marca. Me encargo de crear la página web y diseño que necesites.",
+        "HEADER": {
+            "NAV_LINKS": {
+                    "EXPERIENCE": {
+                        "TITLE": "Experiencia",
+                        "LINK": "#experience"
+                    },
+                    "PROJECTS": {
+                        "TITLE": "Proyectos",
+                        "LINK": "#projects"
+                    },
+                    "DESIGNS": {
+                        "TITLE": "Diseños",
+                        "LINK": "#gallery"
+                    },
+                    "HOME_LINK": "/"
+            }      
+        },
+        "HERO": {
+            "TITLE": "Hola, soy Fredd",
+            "BADGE": "Disponible para trabajar",
+            "DESCRIPTION": {
+                "PART_1": "Desarrollador Web Frontend Junior",
+                "PART_2": "y",
+                "PART_3": "Diseñador Gráfico",
+                "PART_4": " de Ciudad Del Este, Paraguay. Especializado en crear aplicaciones web con la identidad visual que ",
+                "PART_5": "tu empresa necesita."
+            }
+        },
+        "CONTENT": {
+            "SECTION": {
+                "EXPERIENCE_TITLE": "Experiencia laboral",
+                "PROJECTS_TITLE": "Proyectos",
+                "DESIGNS_TITLE": "Diseños",
+                "CONTACT_TITLE": "Contacto",
+                "ABOUT_TITLE": "Sobre mí"
+            }
+        },
+        "EXPERIENCE": {
+            "JOB_1": {
+                "DATE": "Actualmente",
+                "TITLE": "Diseñador gráfico y Desarrollador Freelancer",
+                "DESCRIPTION": "Comenzando mi carrera de programación con pequeños proyectos no muy complejos y a la par sigo creando contenido para varias empresas como diseñador gráfico, para redes sociales, publicidad, etc. Además de también editar videos para redes sociales y programar contenidos para las empresas que necesiten."
+            },
+            "JOB_2": {
+                "DATE": "Enero 2023",
+                "TITLE": "Diseñador gráfico y Editor de Video - iStore",
+                "DESCRIPTION": "Responsable de crear manejar el contenido diario de todo lo relacionado a los visuales de la empresa, en redes sociales, pagina web, publicidad, etc. Me aseguraba de generar el mejor contenido posible para atraer clientes."
+            }
+        },
+        "PROJECTS": {
+            "PROJECT_1": {
+                "TITLE": "ElectroFrio - 2024 (En progreso...)",
+                "DESCRIPTION": "Una landing page para una importante empresa de climatización de la región en donde vivo, encargandome del diseño UI, UX, el responsive, el SEO y de más."
+            },
+            "PROJECT_2": {
+                "TITLE": "Flesh CMS - 2024 (En progreso...)",
+                "DESCRIPTION": "Un CMS dashboard para controlar productos, categorias, detalles y otros aspectos de un E-Commerce, desarrollado para iStore."
+            },
+            "MORE_TEXT": "Ver proyecto"
+        },
+        "DESIGN_SECTION": {
+            "SOCIALMEDIA": {
+                "TITLE": "Redes Sociales",
+                "DESCRIPTION": "Algunos de los diseños que he realizado para redes sociales, como banners, publicaciones, etc. Estos diseños son realizados con el fin de promocionar productos, servicios o eventos.",
+                "LINK_TO": "/redes-sociales"
+            },
+            "PHOTOMANIPULATION": {
+                "TITLE": "Foto Manipulación",
+                "DESCRIPTION": "Algunos de los fotomontajes que he realizado para diferentes proyectos, como edición de imágenes, fotomontajes, etc.",
+                "LINK_TO": "/fotomontajes"
+            },
+            "MORE_TEXT": "Ver más"
+        },
+        "FOOTER": {
+            "MAIN_TEXT": "© 2023 Freddy Sanabria.",
+            "NAV_LINK_1": {
+                "TITLE": "Sobre mí",
+                "LINK": "#about"
+            },
+            "NAV_LINK_2": {
+                "TITLE": "Contacto",
+                "LINK": "#contact"
+            }
+        },
+        "EXTRA": {
+            "TITLE": "Este portfolio está en progreso, falta mucho contenido... :)"
+        }
+    },
+    "DESIGNS_PAGE": {
+        "SEO_TITLE": "Freddy Sanabria - Diseños Gráficos de Paraguay",
+        "SEO_DESCRIPTION": "Conoce todos algunos de mis diseños más destacables de banners, publicaciones, fotomontajes, etc.",
+        "CONTENT": {
+            "SECTION": {
+                "TITLE": "Social Media",
+                "DESCRIPTION": {
+                    "PART_1": "Algunos de los diseños que he realizado",
+                    "PART_2": "diseños que he realizado",
+                    "PART_3": "para redes sociales, como banners, publicaciones, etc.",
+                    "PART_4": "Estos diseños son realizados con el fin de promocionar",
+                    "PART_5": "productos, servicios o eventos."
+                }
+            }
+        }
+    },
+    "MANIPULATION_PAGE": {
+        "SEO_TITLE": "Freddy Sanabria - Fotomontajes y Edición de Imágenes de Paraguay",
+        "SEO_DESCRIPTION": "Conoce todos algunos de mis diseños más destacables de fotomontajes y edición de imágenes",
+        "CONTENT": {
+            "SECTION": {
+                "TITLE": "Foto Manipulación",
+                "DESCRIPTION": {
+                    "PART_1": "Algunos de los",
+                    "PART_2": "fotomontajes que he realizado",
+                    "PART_3": "para diferentes proyectos, como edición de imágenes, fotomontajes, etc."
+                }
+            }
+        }
+    }
+}
