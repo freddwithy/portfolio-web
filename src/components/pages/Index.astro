@@ -12,6 +12,8 @@ import DesignProjects from '../../components/DesignProjects.astro';
 import AddressBook from '../../icons/AddressBook.astro';
 import UserCircle from '../../icons/UserCircle.astro';
 import { getI18n } from '../../i18n/ui';
+import About from '../About.astro';
+import ContactMe from '../ContactMe.astro';
 
 const { currentLocale = "en" } = Astro;
 const i18n = getI18n({ currentLocale })
@@ -71,13 +73,14 @@ const i18n = getI18n({ currentLocale })
 				{i18n.MAIN_PAGE.CONTENT.SECTION.ABOUT_TITLE}
 			</h2>
 		</SectionContainer>
-		<SectionContainer class="justify-center my-20 items-center lg:max-w-[740px] hidden" id="contact">
+		<SectionContainer class="justify-center my-20 items-center lg:max-w-[740px]" id="contact">
 			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
 				<AddressBook  class="size-8"/>
 				{i18n.MAIN_PAGE.CONTENT.SECTION.CONTACT_TITLE}
 			</h2>
+			<ContactMe />
 		</SectionContainer>
-		<SectionContainer class="justify-center my-20 items-center lg:max-w-[740px]">
+		<SectionContainer class="justify-center my-20 items-center lg:max-w-[740px] hidden">
 			<div class="flex flex-col lg:flex-row items-center gap-4">
 				<h3 class="text-2xl text-center lg:text-left">
 					{i18n.MAIN_PAGE.EXTRA.TITLE}

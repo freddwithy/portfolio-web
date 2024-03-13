@@ -1,0 +1,33 @@
+---
+import { getI18n } from "../i18n/ui";
+
+const { currentLocale = "es" } = Astro;
+const i18n = getI18n({ currentLocale })
+
+const CONTACT_DESC = i18n.MAIN_PAGE.CONTACT.DESCRIPTION
+const CONTACT_FORM = i18n.MAIN_PAGE.CONTACT.FORM
+---
+
+<div class="flex flex-col gap-y-4">
+    <p class="md:text-lg">
+        <span class="text-yellow-200">{CONTACT_DESC.PART_1}</span>{CONTACT_DESC.PART_2}<span class="text-red-200">{CONTACT_DESC.PART_3}</span>{CONTACT_DESC.PART_4}<span class="text-yellow-200">{CONTACT_DESC.PART_5}</span>
+    </p>
+    <form class="space-y-4 text-black" action="">
+            <div class="flex flex-col gap-y-2">
+                <label class="text-blue-200" for="name">{CONTACT_FORM.NAME}</label>
+                <input type="text" id="name" name="name" class="p-2 rounded-lg" required>
+            </div>
+            <div class="flex flex-col gap-y-2">
+                <label class="text-blue-200" for="email">{CONTACT_FORM.EMAIL}</label>
+                <input type="email" id="email" name="email" class="p-2 rounded-lg" required>
+            </div>
+            <div class="flex flex-col gap-y-2">
+                <label class="text-blue-200" for="message">{CONTACT_FORM.MESSAGE}</label>
+                <textarea  name="message" id="message" class="p-2 rounded-lg resize-none h-32" required></textarea>
+            </div>
+            <div class="flex md:justify-end w-full">
+                <button type="submit" class="w-full py-2 px-4 rounded-lg  hover:scale-105 transition hover:bg-black/60 hover:text-yellow-200 bg-black border border-white/30 text-white">{CONTACT_FORM.SUBMIT}</button>
+            </div>
+    </form>
+</div>
+

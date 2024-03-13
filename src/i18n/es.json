@@ -79,6 +79,21 @@
             },
             "MORE_TEXT": "Ver más"
         },
+        "CONTACT": {
+            "DESCRIPTION": {
+                "PART_1": "¡Ponte en contacto conmigo para cualquier consulta,",
+                "PART_2": " colaboración o simplemente para saludar! ",
+                "PART_3": "Estoy encantado de escuchar tus ideas y trabajar juntos en proyectos emocionantes.",
+                "PART_4": "  No dudes en llenar el formulario a continuación y te responderé lo antes posible. ",
+                "PART_5": "¡Espero saber de ti pronto! :)"
+            },
+            "FORM": {
+                "NAME": "Nombre",
+                "EMAIL": "Correo",
+                "MESSAGE": "Mensaje",
+                "SUBMIT": "Enviar"
+            }
+        },
         "FOOTER": {
             "MAIN_TEXT": "© 2023 Freddy Sanabria.",
             "NAV_LINK_1": {
