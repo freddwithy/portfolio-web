@@ -53,14 +53,18 @@
         },
         "PROJECTS": {
             "PROJECT_1": {
-                "TITLE": "ElectroFrio - 2024 (En progreso...)",
-                "DESCRIPTION": "Una landing page para una importante empresa de climatización de la región en donde vivo, encargandome del diseño UI, UX, el responsive, el SEO y de más."
+                "TITLE": "ElectroFrio - 2024",
+                "DESCRIPTION": "Una landing page para una importante empresa de climatización de la región en donde vivo, encargandome del diseño UI, UX, el responsive, el SEO y de más. El proyecto aún no está terminado."
             },
             "PROJECT_2": {
-                "TITLE": "Flesh CMS - 2024 (En progreso...)",
-                "DESCRIPTION": "Un CMS dashboard para controlar productos, categorias, detalles y otros aspectos de un E-Commerce, desarrollado para iStore."
+                "TITLE": "Flesh CMS - 2024",
+                "DESCRIPTION": "Un CMS dashboard para controlar productos, categorias, detalles y otros aspectos de un E-Commerce, desarrollado para iStore. El proyecto aún no está terminado."
             },
-            "MORE_TEXT": "Ver proyecto"
+            "PROJECT_3": {
+                "TITLE": "iStore - 2024",
+                "DESCRIPTION": "E-Commerce para una tienda de Apple en Paraguay, en donde me encargué de la parte visual, el responsive, el SEO y de más. El proyecto aún no está terminado."
+            },
+            "MORE_TEXT": "Ver demo"
         },
         "DESIGN_SECTION": {
             "SOCIALMEDIA": {

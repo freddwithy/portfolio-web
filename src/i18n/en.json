@@ -60,7 +60,11 @@
                 "TITLE": "Flesh CMS - 2024 (Work in progress...)",
                 "DESCRIPTION": "A CMS dashboard to control products, categories, details and other aspects of an E-Commerce, developed for iStore."
             },
-            "MORE_TEXT": "View project"
+            "PROJECT_3": {
+                "TITLE": "iStore - 2024",
+                "DESCRIPTION": "E-Commerce for an Apple store in Paraguay, where I was in charge of the visual part, the responsive, the SEO and more. The project is not finished yet."
+            },
+            "MORE_TEXT": "View demo"
         },
         "DESIGN_SECTION": {
             "SOCIALMEDIA": {
