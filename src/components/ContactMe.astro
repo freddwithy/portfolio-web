@@ -31,3 +31,17 @@ const CONTACT_FORM = i18n.MAIN_PAGE.CONTACT.FORM
     </form>
 </div>
 
+<script>
+    const form = document.querySelector('form') as HTMLFormElement;
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await fetch("/api/sendEmail.json", {
+            method: "POST",
+            body: JSON.stringify(Object.fromEntries(new FormData(form))),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    });
+</script>
+
