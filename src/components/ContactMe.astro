@@ -1,13 +1,12 @@
 ---
 import { getI18n } from "../i18n/ui";
-
 const { currentLocale = "es" } = Astro;
 const i18n = getI18n({ currentLocale })
 
 const CONTACT_DESC = i18n.MAIN_PAGE.CONTACT.DESCRIPTION
 const CONTACT_FORM = i18n.MAIN_PAGE.CONTACT.FORM
 ---
-<div class="flex flex-col gap-y-4">
+<div class="flex flex-col gap-y-4" id="form-div">
     <p class="md:text-lg">
         <span class="text-yellow-200">{CONTACT_DESC.PART_1}</span>{CONTACT_DESC.PART_2}<span class="text-red-200">{CONTACT_DESC.PART_3}</span>{CONTACT_DESC.PART_4}<span class="text-yellow-200">{CONTACT_DESC.PART_5}</span>
     </p>
@@ -25,13 +24,20 @@ const CONTACT_FORM = i18n.MAIN_PAGE.CONTACT.FORM
                 <textarea  name="message" id="message" class="p-2 rounded-lg resize-none h-32" required></textarea>
             </div>
             <div class="flex md:justify-end w-full">
-                <button type="submit" class="w-full py-2 px-4 rounded-lg  hover:scale-105 transition hover:bg-black/60 hover:text-yellow-200 bg-black border border-white/30 text-white">{CONTACT_FORM.SUBMIT}</button>
+                <button type="submit" class="w-full py-2 px-4 rounded-xl  hover:scale-105 transition hover:bg-black/60 hover:text-yellow-200 bg-black border border-white/20 text-white">{CONTACT_FORM.SUBMIT}</button>
             </div>
     </form>
 </div>
+<div class="hidden items-center justify-center mt-10" id="sent-message">
+    <h3 class="text-2xl text-center">Tu mensaje fue enviado! <br><span class="text-yellow-200">Gracias por ponerte en contacto.</span><span class="text-red-500 text-3xl"> ♡</span></h3>
+</div>
 
 <script>
+    import confetti from 'canvas-confetti';
+
     const form = document.querySelector('form') as HTMLFormElement;
+    const sent = document.getElementById('sent-message') as HTMLDivElement;
+    const formDiv = document.getElementById('form-div') as HTMLDivElement;
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         await fetch("/api/sendEmail.json", {
@@ -41,6 +47,10 @@ const CONTACT_FORM = i18n.MAIN_PAGE.CONTACT.FORM
                 "Content-Type": "application/json"
             }
         })
+        sent.classList.remove('hidden');
+        sent.classList.add('flex');
+        formDiv.classList.add('hidden');
+        confetti()
     });
 </script>
 
