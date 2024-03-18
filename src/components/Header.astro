@@ -26,14 +26,14 @@ NAV_LINKS.push(
 )
 ---
 
-<header id="header-nav" class="flex mx-auto justify-center items-center my-8 p-2 fixed bg-slate-900/60 backdrop-blur-sm border border-white/20 lg:max-w-[1120px] max-w-sm rounded-full z-10">
+<header id="header-nav" class="flex mx-auto justify-center items-center my-8 p-2 fixed bg-slate-900/60 backdrop-blur-sm border border-white/20 md:max-w-[1120px] max-w-sm rounded-full z-10">
     <a href={navItems.HOME_LINK}>
-        <img src="/avatar.webp" alt="avatar" class="hidden lg:size-10 rounded-full md:flex hover:scale-105 transition-all" id="avatar">
+        <img src="/avatar.webp" alt="avatar" class="hidden md:size-10 rounded-full md:flex hover:scale-105 transition-all" id="avatar">
     </a>
      <nav class="flex mx-2 items-center gap-x-4">
         {
             NAV_LINKS.map((link) => (
-                <a href={link.link} class="hover:text-yellow-700 dark:text-white transition-colors dark:hover:text-yellow-200 text-white lg:text-black ease-linear text-sm lg:text-base">{link.title}</a>
+                <a href={link.link} class="hover:text-yellow-700 dark:text-white transition-colors dark:hover:text-yellow-200 text-white md:text-black ease-linear text-sm md:text-base">{link.title}</a>
             ))
         }
         <LanguageSelector />

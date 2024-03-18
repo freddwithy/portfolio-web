@@ -12,7 +12,6 @@ import DesignProjects from '../../components/DesignProjects.astro';
 import AddressBook from '../../icons/AddressBook.astro';
 import UserCircle from '../../icons/UserCircle.astro';
 import { getI18n } from '../../i18n/ui';
-import About from '../About.astro';
 import ContactMe from '../ContactMe.astro';
 
 const { currentLocale = "en" } = Astro;
@@ -21,14 +20,14 @@ const i18n = getI18n({ currentLocale })
 
 <Layout title={i18n.MAIN_PAGE.SEO_TITLE} description={i18n.MAIN_PAGE.SEO_DESCRIPTION}>
 	<main>
-		<SectionContainer class="pt-44 lg:pt-56 pb-16 lg:pb-10 h-screen lg:h-auto lg:max-w-[740px] animate-fade-up">
-			<div class="flex flex-col gap-y-4 lg:gap-x-4 lg:flex-row items-center mb-4">
-				<img src="/avatar.webp" alt="avatar" class="rounded-full w-32 h-32 lg:hidden">
-				<h1 class="font-bold text-4xl lg:text-5xl dark:text-white">{i18n.MAIN_PAGE.HERO.TITLE}</h1>
+		<SectionContainer class="pt-44 md:pt-56 pb-16 md:pb-10 h-screen md:h-auto md:max-w-[740px] animate-fade-up">
+			<div class="flex flex-col gap-y-4 md:gap-x-4 md:flex-row items-center mb-4">
+				<img src="/avatar.webp" alt="avatar" class="rounded-full w-32 h-32 md:hidden">
+				<h1 class="font-bold text-4xl md:text-5xl dark:text-white">{i18n.MAIN_PAGE.HERO.TITLE}</h1>
 				<Badge>{i18n.MAIN_PAGE.HERO.BADGE}</Badge>
 			</div>
-			<h2 class="text-md lg:text-xl opacity-80 mb-4 text-center lg:text-left dark:text-white"><span class="dark:text-yellow-200 text-yellow-700">{i18n.MAIN_PAGE.HERO.DESCRIPTION.PART_1}</span> {i18n.MAIN_PAGE.HERO.DESCRIPTION.PART_2} <span class="dark:text-yellow-200 text-yellow-700">{i18n.MAIN_PAGE.HERO.DESCRIPTION.PART_3}</span>{i18n.MAIN_PAGE.HERO.DESCRIPTION.PART_4}<span class="dark:text-red-300 text-violet-700">{i18n.MAIN_PAGE.HERO.DESCRIPTION.PART_5}</span></h2>
-			<nav class="gap-2 flex flex-wrap justify-center lg:justify-start">
+			<h2 class="text-md md:text-xl opacity-80 mb-4 text-center md:text-left dark:text-white"><span class="dark:text-yellow-200 text-yellow-700">{i18n.MAIN_PAGE.HERO.DESCRIPTION.PART_1}</span> {i18n.MAIN_PAGE.HERO.DESCRIPTION.PART_2} <span class="dark:text-yellow-200 text-yellow-700">{i18n.MAIN_PAGE.HERO.DESCRIPTION.PART_3}</span>{i18n.MAIN_PAGE.HERO.DESCRIPTION.PART_4}<span class="dark:text-red-300 text-violet-700">{i18n.MAIN_PAGE.HERO.DESCRIPTION.PART_5}</span></h2>
+			<nav class="gap-2 flex flex-wrap justify-center md:justify-start">
 				<SocialPill href="https://www.linkedin.com/in/freddy-sanabria-7544891b9/">
 					LinkedIn
 				</SocialPill>
@@ -46,43 +45,43 @@ const i18n = getI18n({ currentLocale })
 				</SocialPill>
 			</nav>
 		</SectionContainer>
-		<SectionContainer class="mt-20 lg:max-w-[740px] animate-fade-up animate-delay-200" id="experience">
+		<SectionContainer class="mt-20 md:max-w-[740px] animate-fade-up animate-delay-200" id="experience">
 			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
 				<BriefcaseIcon class="size-8 "/>
 				{i18n.MAIN_PAGE.CONTENT.SECTION.EXPERIENCE_TITLE}
 			</h2>
 			<Experience />
 		</SectionContainer>
-		<SectionContainer class="flex flex-col lg:max-w-[740px] animate-fade-up animate-delay-300" id="projects">
+		<SectionContainer class="flex flex-col md:max-w-[740px] animate-fade-up animate-delay-300" id="projects">
 			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
 				<CodeIcon class="size-8"/>
 				{i18n.MAIN_PAGE.CONTENT.SECTION.PROJECTS_TITLE}
 			</h2>
 			<Projects />
 		</SectionContainer>
-		<SectionContainer class="flex flex-col lg:max-w-[740px]" id="designs">
+		<SectionContainer class="flex flex-col md:max-w-[740px]" id="designs">
 			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
 				<Brush class="size-8"/>
 				{i18n.MAIN_PAGE.CONTENT.SECTION.DESIGNS_TITLE}
 			</h2>
 			<DesignProjects />
 		</SectionContainer>
-		<SectionContainer class="justify-center my-20 items-center lg:max-w-[740px] hidden" id="contact">
+		<SectionContainer class="justify-center my-20 items-center md:max-w-[740px] hidden" id="contact">
 			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
 				<UserCircle  class="size-8"/>
 				{i18n.MAIN_PAGE.CONTENT.SECTION.ABOUT_TITLE}
 			</h2>
 		</SectionContainer>
-		<SectionContainer class="justify-center my-20 items-center lg:max-w-[740px]" id="contact">
+		<SectionContainer class="justify-center my-20 items-center md:max-w-[740px]" id="contact">
 			<h2 class="text-2xl font-semibold flex gap-x-4 items-center mb-6 text-black dark:text-white">
 				<AddressBook  class="size-8"/>
 				{i18n.MAIN_PAGE.CONTENT.SECTION.CONTACT_TITLE}
 			</h2>
 			<ContactMe />
 		</SectionContainer>
-		<SectionContainer class="justify-center my-20 items-center lg:max-w-[740px] hidden">
-			<div class="flex flex-col lg:flex-row items-center gap-4">
-				<h3 class="text-2xl text-center lg:text-left">
+		<SectionContainer class="justify-center my-20 items-center md:max-w-[740px] hidden">
+			<div class="flex flex-col md:flex-row items-center gap-4">
+				<h3 class="text-2xl text-center md:text-left">
 					{i18n.MAIN_PAGE.EXTRA.TITLE}
 				</h3>
 				<img src="/coolcat.webp" alt="coolcat" width="200" height="200">
