@@ -19,6 +19,9 @@ export default defineConfig({
       en: "https://en.freddsana.art"
     }
   },
+  experimental: {
+    i18nDomains: true
+  },
   output: "server",
   adapter: node({
     mode: "standalone"
