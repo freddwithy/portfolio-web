@@ -16,8 +16,4 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
-  output: "server",
-  adapter: node({
-    mode: "standalone"
-  })
 });
