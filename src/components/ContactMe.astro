@@ -40,7 +40,7 @@ const CONTACT_FORM = i18n.MAIN_PAGE.CONTACT.FORM
     const formDiv = document.getElementById('form-div') as HTMLDivElement;
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        await fetch("/api/send-email.json", {
+        await fetch("/api/send-email", {
             method: "POST",
             body: JSON.stringify(Object.fromEntries(new FormData(form))),
             headers: {
