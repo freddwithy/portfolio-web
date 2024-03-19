@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import preact from "@astrojs/preact";
-import netlify from "@astrojs/netlify";
+import node from "@astrojs/node";
+
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,5 +16,7 @@ export default defineConfig({
     }
   },
   output: "server",
-  adapter: netlify()
+  adapter: node({
+    mode: "standalone"
+  })
 });
