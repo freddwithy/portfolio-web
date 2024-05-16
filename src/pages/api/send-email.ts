@@ -17,16 +17,16 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const send = await resend.emails.send({
-        from: "fredd@freddsana.art",
+        from: "freddyemanuelsanabrianalerio@gmail.com",
         to: email,
         subject: "Hola, gracias por contactarme! :)",
         text: `Hola ${name}, gracias por contactarme! Tu mensaje fue: ${message}. Pronto estaré en contacto contigo. Saludos!`,
     })
 
     const send2 = await resend.emails.send({
-        from: "fredd@freddsana.art",
+        from: "freddyemanuelsanabrianalerio@gmail.com",
         to: "freddyemanuelsanabrianalerio@gmail.com",
-        subject: "Nuevo mensaje de contacto en freddsana.art!",
+        subject: "Nuevo mensaje de contacto desde tu Portfolio!",
         text: `Hola, tienes un nuevo mensaje de contacto de ${name} con el correo ${email}. El mensaje fue: ${message}`,
     })
 
