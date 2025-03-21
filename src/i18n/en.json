@@ -68,7 +68,16 @@
                 "TITLE": "Just a Resume - 2024",
                 "DESCRIPTION": "A free tool to create resumes for people who don't have much time to write, with a very simple and easy to use design."
             },
-            "MORE_TEXT": "View demo"
+            "PROJECT_5": {
+                "TITLE": "Giddi Shop - 2025",
+                "DESCRIPTION": "A SAAS for creating and managing online stores, focused on quick and easy access. Made in Next JS and using the majority of Next JS features. Including authentication, payment, shopping cart, etc."
+            },
+            "MORE_TEXT": {
+                "MORE": "See more",
+                "FRONT": "See Frontend",
+                "BACK": "See Backend"
+            }
+            
         },
         "DESIGN_SECTION": {
             "SOCIALMEDIA": {
