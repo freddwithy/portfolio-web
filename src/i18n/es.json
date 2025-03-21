@@ -68,7 +68,15 @@
                 "TITLE": "Just a Resume - 2024",
                 "DESCRIPTION": "Una herramienta gratuita para crear curriculums para personas que no tienen mucho tiempo para escribir, con un diseño muy simple y fácil de usar."
             },
-            "MORE_TEXT": "Ver demo"
+            "PROJECT_5": {
+                "TITLE": "Giddi Shop - 2025",
+                "DESCRIPTION": "Un SAAS para crear y administrar tiendas online, enfocado en el acceso rápido y fácil de usar. Hecho en Next JS y utilizando la mayoria de características de Next JS. Incluyendo tambien la autenticación, el pago, el carrito de compras, etc. "
+            },
+            "MORE_TEXT": {
+                "MORE": "Ver más",
+                "FRONT": "Ver Frontend",
+                "BACK": "Ver Backend"
+            } 
         },
         "DESIGN_SECTION": {
             "SOCIALMEDIA": {

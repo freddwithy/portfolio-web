@@ -59,6 +59,15 @@ const TOOL_TAGS = {
 
 const PROJECTS = [
 {
+        name: [i18n.MAIN_PAGE.PROJECTS.PROJECT_5.TITLE],
+        desc: [i18n.MAIN_PAGE.PROJECTS.PROJECT_5.DESCRIPTION],
+        img: "/projects/giddi.webp",
+        tags: [TOOL_TAGS.TAILWIND, TOOL_TAGS.NEXTJS, TOOL_TAGS.SUPABASE,  TOOL_TAGS.SHADCN],
+        link: "https://giddi.shop/revtek",
+        link2: "https://giddi.shop/sign-up",
+        githubLink: "https://github.com/freddwithy/rapidstore"
+    },
+{
         name: [i18n.MAIN_PAGE.PROJECTS.PROJECT_4.TITLE],
         desc: [i18n.MAIN_PAGE.PROJECTS.PROJECT_4.DESCRIPTION],
         img: "/projects/justaresume.webp",
@@ -67,26 +76,11 @@ const PROJECTS = [
         link: "https://justaresume.vercel.app",
         githubLink: "https://github.com/freddwithy/just-a-simple-cv"
     },
-    {
-        name: [i18n.MAIN_PAGE.PROJECTS.PROJECT_3.TITLE],
-        desc: [i18n.MAIN_PAGE.PROJECTS.PROJECT_3.DESCRIPTION],
-        img: "/projects/istore.webp",
-        alt: "istore",
-        tags: [TOOL_TAGS.NEXTJS, TOOL_TAGS.TAILWIND, TOOL_TAGS.MYSQL, TOOL_TAGS.PLANETSCALE, TOOL_TAGS.SHADCN],
-        githubLink: "https://github.com/freddwithy/istore-ecommerce-frontweb"
-    },
-    {
-        name: [i18n.MAIN_PAGE.PROJECTS.PROJECT_2.TITLE],
-        desc: [i18n.MAIN_PAGE.PROJECTS.PROJECT_2.DESCRIPTION],
-        img: "/projects/fleshcms.webp",
-        alt: "fleshcms",
-        tags: [TOOL_TAGS.NEXTJS, TOOL_TAGS.TAILWIND, TOOL_TAGS.MYSQL, TOOL_TAGS.PLANETSCALE, TOOL_TAGS.SHADCN],
-        githubLink: "https://github.com/freddwithy/istore-ecommerce-dashboard"
-    },
+    
 ]
 ---
 {
-    PROJECTS.map(({ name, desc, img, alt, tags, link, githubLink }) => (
+    PROJECTS.map(({ name, desc, img, alt, tags, link, githubLink, link2 }) => (
         <article class="flex flex-col md:flex-row items-center gap-y-6 md:gap-x-8 mb-16">
             <div class='flex-2 relative h-64 w-full max-w-96 overflow-hidden rounded-xl border border-slate-800 p-[1px] backdrop-blur-3xl'>
                 <span class='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]' />
@@ -108,8 +102,11 @@ const PROJECTS = [
                 </div>
                 <p class="text-sm dark:text-gray-200 text-pretty">{desc}</p>
                 <div class="flex gap-x-2 items-center">
-                    {link && <a class='inline-flex h-12 mt-2 bg-violet-800 dark:animate-background-shine items-center justify-center rounded-full border border-gray-200 dark:border-white/30 dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 md:px-6 font-medium text-white dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 w-32 md:w-56 hover:scale-105 transition-all ease-in-out' href={link} target="_blank">                      
-                    {i18n.MAIN_PAGE.PROJECTS.MORE_TEXT}
+                    {link && <a class='inline-flex h-12 mt-2 bg-violet-800 dark:animate-background-shine items-center justify-center rounded-full border border-gray-200 dark:border-white/30 dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 font-medium text-white dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 w-32 md:max-w-56 hover:scale-105 transition-all ease-in-out' href={link} target="_blank">                      
+                    {i18n.MAIN_PAGE.PROJECTS.MORE_TEXT.FRONT}
+                    </a>} 
+                    {link2 && <a class='inline-flex h-12 mt-2 bg-violet-800 dark:animate-background-shine items-center justify-center rounded-full border border-gray-200 dark:border-white/30 dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 font-medium text-white dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 w-32 md:,max-w-56 hover:scale-105 transition-all ease-in-out' href={link2} target="_blank">                      
+                    {i18n.MAIN_PAGE.PROJECTS.MORE_TEXT.BACK}
                     </a>} 
                     <a class='inline-flex size-12 mt-2 bg-violet-800 dark:animate-background-shine items-center justify-center rounded-full border border-gray-200 dark:border-white/30 dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 md:px-2 font-medium text-white dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 hover:scale-105 transition-all ease-in-out' href={githubLink} target="_blank">
                     <Github />
