@@ -42,8 +42,8 @@
         "EXPERIENCE": {
             "JOB_1": {
                 "DATE": "Currently",
-                "TITLE": "Freelance Graphic Designer and Developer",
-                "DESCRIPTION": "Starting my programming career with small not very complex projects and at the same time I continue to create content for various companies as a graphic designer, for social networks, advertising, etc. In addition to also editing videos for social networks and programming content for companies that need it."
+                "TITLE": "Freelance Web Developer",
+                "DESCRIPTION": "Creating unique web applications and systems that meet the needs of each client."
             },
             "JOB_2": {
                 "DATE": "January 2023",
@@ -69,7 +69,7 @@
                 "DESCRIPTION": "A free tool to create resumes for people who don't have much time to write, with a very simple and easy to use design."
             },
             "PROJECT_5": {
-                "TITLE": "Giddi Shop - 2025",
+                "TITLE": "Tiendy - 2025",
                 "DESCRIPTION": "A SAAS for creating and managing online stores, focused on quick and easy access. Made in Next JS and using the majority of Next JS features. Including authentication, payment, shopping cart, etc."
             },
             "MORE_TEXT": {
@@ -108,7 +108,7 @@
             }
         },
         "FOOTER": {
-            "MAIN_TEXT": "© 2023 Freddy Sanabria.",
+            "MAIN_TEXT": "© 2025 Freddy Sanabria.",
             "NAV_LINK_1": {
                 "TITLE": "About me",
                 "LINK": "#about"

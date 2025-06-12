@@ -42,8 +42,8 @@
         "EXPERIENCE": {
             "JOB_1": {
                 "DATE": "Actualmente",
-                "TITLE": "Diseñador gráfico y Desarrollador Freelancer",
-                "DESCRIPTION": "Comenzando mi carrera de programación con pequeños proyectos no muy complejos y a la par sigo creando contenido para varias empresas como diseñador gráfico, para redes sociales, publicidad, etc. Además de también editar videos para redes sociales y programar contenidos para las empresas que necesiten."
+                "TITLE": "Desarrollador Web Freelancer",
+                "DESCRIPTION": "Creando aplicaciones web únicas y sistemas que se ajusten a las necesidades de cada cliente. Utilizando tecnologías como React, Next JS, Tailwind CSS, etc."
             },
             "JOB_2": {
                 "DATE": "Enero 2023",
@@ -69,7 +69,7 @@
                 "DESCRIPTION": "Una herramienta gratuita para crear curriculums para personas que no tienen mucho tiempo para escribir, con un diseño muy simple y fácil de usar."
             },
             "PROJECT_5": {
-                "TITLE": "Giddi Shop - 2025",
+                "TITLE": "Tiendy - 2025",
                 "DESCRIPTION": "Un SAAS para crear y administrar tiendas online, enfocado en el acceso rápido y fácil de usar. Hecho en Next JS y utilizando la mayoria de características de Next JS. Incluyendo tambien la autenticación, el pago, el carrito de compras, etc. "
             },
             "MORE_TEXT": {
@@ -107,7 +107,7 @@
             }
         },
         "FOOTER": {
-            "MAIN_TEXT": "© 2023 Freddy Sanabria.",
+            "MAIN_TEXT": "© 2025 Freddy Sanabria.",
             "NAV_LINK_1": {
                 "TITLE": "Sobre mí",
                 "LINK": "#about"
